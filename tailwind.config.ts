@@ -17,8 +17,8 @@ const config: Config = {
         secondary: '#d7dfdb',
         secondaryHover: '#c6d2cc',
 
-        darkSecondary: '#0d110f',
-        darkSecondaryHover: '#161d1a',
+        darkSecondary: '#222a26',
+        darkSecondaryHover: '#2d3933',
 
         accent: '#517b65',
         darkAccent: '#a3c2b2',
