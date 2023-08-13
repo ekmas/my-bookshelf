@@ -8,7 +8,28 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {},
+      colors: {
+        bg: '#f2f2f2',
+        darkBg: '#0d0d0d',
+        primary: '#1d633e',
+        primaryHover: '#174f31',
+
+        secondary: '#d7dfdb',
+        secondaryHover: '#c6d2cc',
+
+        darkSecondary: '#0d110f',
+        darkSecondaryHover: '#161d1a',
+
+        accent: '#517b65',
+        darkAccent: '#a3c2b2',
+      },
+      width: {
+        container: '1300px',
+      },
+      padding: {
+        containerDesktop: '30px',
+        containerMobile: '20px',
+      },
     },
   },
   plugins: [],
