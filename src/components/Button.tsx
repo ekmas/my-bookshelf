@@ -13,6 +13,7 @@ const buttonVariants = cva(
           'px-6 py-3 bg-secondary hover:bg-secondaryHover text-black dark:bg-darkSecondary hover:dark:bg-darkSecondaryHover dark:text-white',
         cta: 'px-6 py-3 bg-primary text-white hover:bg-primaryHover',
         link: 'bg-transparent dark:bg-transparent text-black dark:text-white transition-opacity transition-colors hover:bg-transparent hover:opacity-80 dark:hover:bg-transparent',
+        underline: 'hover:underline opacity-80 transition-none',
       },
       size: {
         sm: 'px-4 py-2 text-sm',
