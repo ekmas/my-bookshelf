@@ -1,13 +1,42 @@
+'use client'
+
 import React from 'react'
-import createClient from '@/lib/supabase-server'
-import ClientNavbar from './ClientNavbar'
+import logo from '../../public/logo.png'
+import Button from './Button'
+import createClient from '@/lib/supabase-client'
+import { useRouter } from 'next/navigation'
+import { User } from '@supabase/supabase-js'
 
-export default async function Navbar() {
+export default function ClientNavbar({ user }: { user: User | null }) {
   const supabase = createClient()
+  const router = useRouter()
 
-  const {
-    data: { session },
-  } = await supabase.auth.getSession()
+  const signOut = async () => {
+    await supabase.auth.signOut()
+    router.refresh()
+  }
 
-  return <ClientNavbar session={session} />
+  return (
+    <nav>
+      <div className="mx-auto flex w-container items-center justify-between px-containerDesktop py-5">
+        <Button variant={'link'} href={'/'}>
+          <img src={logo.src} width={60} alt="logo" />
+        </Button>
+        <div>
+          {user ? (
+            <>
+              <p>{user.email}</p>
+              <Button onClick={signOut} variant={'cta'}>
+                Sign out
+              </Button>
+            </>
+          ) : (
+            <Button variant={'cta'} href={'/sign-in'} className="mr-10">
+              Sign in
+            </Button>
+          )}
+        </div>
+      </div>
+    </nav>
+  )
 }
