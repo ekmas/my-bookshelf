@@ -31,6 +31,8 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
+    "encoding": "^0.1.13",
+    "eslint-config-prettier": "^9.0.0",
     "prettier": "^3.0.1",
     "prettier-plugin-tailwindcss": "^0.4.1"
   }
