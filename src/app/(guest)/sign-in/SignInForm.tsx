@@ -1,8 +1,8 @@
 'use client'
 import Button from '@/components/Button'
 import { useForm, SubmitHandler } from 'react-hook-form'
-import createClient from '@/lib/supabase-client'
 import { useRouter } from 'next/navigation'
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 
 type Inputs = {
   email: string
@@ -18,7 +18,7 @@ export default function SignInForm() {
     clearErrors,
   } = useForm<Inputs>()
 
-  const supabase = createClient()
+  const supabase = createClientComponentClient()
   const router = useRouter()
 
   const onSubmit: SubmitHandler<Inputs> = async ({ email, password }) => {

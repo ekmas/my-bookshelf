@@ -3,11 +3,11 @@
 import Button from '@/components/Button'
 import React from 'react'
 import { BsGithub, BsGoogle } from 'react-icons/bs'
-import createClient from '@/lib/supabase-client'
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import { Provider } from '@supabase/supabase-js'
 
 export default function SignInProviders() {
-  const supabase = createClient()
+  const supabase = createClientComponentClient()
 
   const signIn = async (provider: Provider) => {
     await supabase.auth.signInWithOAuth({

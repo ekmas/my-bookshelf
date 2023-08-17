@@ -1,7 +1,7 @@
-import createClient from '@/lib/supabase-server'
+import createServerComponentClient from '@/lib/supabase-server'
 
 export default async function Home() {
-  const supabase = createClient()
+  const supabase = createServerComponentClient()
 
   const {
     data: { session },

@@ -1,5 +1,5 @@
 import GuestNavbar from '@/components/GuestNavbar'
-import createClient from '@/lib/supabase-server'
+import createServerComponentClient from '@/lib/supabase-server'
 import { Session } from 'inspector'
 
 export default async function GuestLayout({
@@ -7,7 +7,7 @@ export default async function GuestLayout({
 }: {
   children: React.ReactNode
 }) {
-  const supabase = createClient()
+  const supabase = createServerComponentClient()
 
   const {
     data: { session },

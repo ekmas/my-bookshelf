@@ -1,7 +1,7 @@
 'use client'
 import Button from '@/components/Button'
 import { useForm, SubmitHandler } from 'react-hook-form'
-import createClient from '@/lib/supabase-client'
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import { useState } from 'react'
 import Modal from './Modal'
 
@@ -20,7 +20,7 @@ export default function SignUpForm() {
     formState: { errors },
   } = useForm<Inputs>()
 
-  const supabase = createClient()
+  const supabase = createClientComponentClient()
 
   const onSubmit: SubmitHandler<Inputs> = async ({ email, password }) => {
     const { data, error: signUpError } = await supabase.auth.signUp({
