@@ -2,14 +2,10 @@
 import { useEffect, useState } from 'react'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import { getRandomNumber } from '@/lib/utils'
+import Username from './Username'
 
 export default function IntroductionWrapper() {
-  const [activeSection, setActiveSection] = useState()
-
-  const [defaultUsername, setDefaultUsername] = useState<string | null>(null)
-  const [defaultProfilePicture, setDefaultProfilePicture] = useState<
-    string | null
-  >(null)
+  const [activeSection, setActiveSection] = useState(0)
 
   const [username, setUsername] = useState('')
   const [profilePicture, setProfilePicture] = useState('')
@@ -24,29 +20,36 @@ export default function IntroductionWrapper() {
 
     if (user?.app_metadata.provider !== 'email') {
       if (user?.app_metadata.provider === 'google') {
-        setDefaultUsername(
+        setUsername(
           user?.user_metadata?.full_name.split(' ').join('') +
             getRandomNumber(),
         )
       }
 
       if (user?.app_metadata.provider === 'github') {
-        setDefaultUsername(user?.user_metadata?.preferred_username)
+        setUsername(user?.user_metadata?.preferred_username + getRandomNumber())
       }
 
-      setDefaultProfilePicture(user?.user_metadata?.avatar_url)
+      setProfilePicture(user?.user_metadata?.avatar_url)
     }
+  }
+
+  let currentSection
+  switch (activeSection) {
+    case 0:
+      currentSection = (
+        <Username
+          username={username}
+          setUsername={setUsername}
+          setActiveSection={setActiveSection}
+        />
+      )
+      break
   }
 
   useEffect(() => {
     getUser()
   }, [])
 
-  return (
-    <div>
-      <div>
-        <div></div>
-      </div>
-    </div>
-  )
+  return <div className="w-full">{currentSection}</div>
 }
