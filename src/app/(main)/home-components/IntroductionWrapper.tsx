@@ -3,13 +3,16 @@ import { useEffect, useState } from 'react'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import { getRandomNumber } from '@/lib/utils'
 import Username from './Username'
+import Subjects from './Subjects'
+import Success from './Success'
 
 export default function IntroductionWrapper() {
-  const [activeSection, setActiveSection] = useState(0)
+  const [activeSection, setActiveSection] = useState<
+    'username' | 'subjects' | 'success'
+  >('username')
 
   const [username, setUsername] = useState('')
-  const [profilePicture, setProfilePicture] = useState('')
-  const [subjects, setSubjects] = useState([])
+  const [subjects, setSubjects] = useState<string[]>([])
 
   const supabase = createClientComponentClient()
 
@@ -29,14 +32,16 @@ export default function IntroductionWrapper() {
       if (user?.app_metadata.provider === 'github') {
         setUsername(user?.user_metadata?.preferred_username + getRandomNumber())
       }
-
-      setProfilePicture(user?.user_metadata?.avatar_url)
     }
+  }
+
+  const log = () => {
+    console.log(username, subjects)
   }
 
   let currentSection
   switch (activeSection) {
-    case 0:
+    case 'username':
       currentSection = (
         <Username
           username={username}
@@ -45,6 +50,17 @@ export default function IntroductionWrapper() {
         />
       )
       break
+    case 'subjects':
+      currentSection = (
+        <Subjects
+          setSubjects={setSubjects}
+          selectedSubjects={subjects}
+          setActiveSection={setActiveSection}
+        />
+      )
+      break
+    case 'success':
+      currentSection = <Success log={log} />
   }
 
   useEffect(() => {
