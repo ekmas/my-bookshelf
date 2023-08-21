@@ -38,7 +38,7 @@ export default function IntroductionModal({
           opacity: isVisible ? '1' : '0',
           visibility: isVisible ? 'visible' : 'hidden',
         }}
-        className="relative flex w-[450px] flex-col items-center justify-center rounded-md border-2 border-black/50 bg-bg px-5 py-14 text-center transition-all duration-300 dark:border-white/50 dark:bg-darkBg"
+        className="relative flex w-[450px] flex-col items-center justify-center rounded-md border-2 border-black/50 bg-bg px-5 py-8 text-center transition-all duration-300 dark:border-white/50 dark:bg-darkBg"
       >
         <IntroductionWrapper />
       </div>
