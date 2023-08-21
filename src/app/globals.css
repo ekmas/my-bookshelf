@@ -7,3 +7,20 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+.subjects {
+  scrollbar-width: auto;
+  scrollbar-color: #000000 #ffffff;
+}
+
+.subjects::-webkit-scrollbar {
+  width: 10px;
+}
+
+.subjects::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+.subjects::-webkit-scrollbar-thumb {
+  background-color: #1d633e;
+}

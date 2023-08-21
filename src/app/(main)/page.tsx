@@ -1,5 +1,5 @@
 import createServerComponentClient from '@/lib/supabase-server'
-import IntroductionModal from './IntroductionModal'
+import IntroductionModal from './home-components/IntroductionModal'
 
 export default async function Home() {
   const supabase = createServerComponentClient()
