@@ -1,11 +1,14 @@
 import Button from '@/components/Button'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
+import { useEffect } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
 type Props = {
   username: string
   setUsername: React.Dispatch<React.SetStateAction<string>>
-  setActiveSection: React.Dispatch<React.SetStateAction<number>>
+  setActiveSection: React.Dispatch<
+    React.SetStateAction<'username' | 'subjects' | 'success'>
+  >
 }
 
 export default function Username({
@@ -17,7 +20,18 @@ export default function Username({
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<{ username: string }>()
+    setFocus,
+    reset,
+  } = useForm<{ username: string }>({
+    defaultValues: {
+      username: username,
+    },
+  })
+
+  useEffect(() => {
+    reset({ username }, { keepDefaultValues: false })
+    setFocus('username')
+  }, [username])
 
   const supabase = createClientComponentClient()
 
@@ -25,7 +39,7 @@ export default function Username({
     username,
   }) => {
     setUsername(username)
-    setActiveSection((prev) => prev + 1)
+    setActiveSection('subjects')
   }
 
   return (
@@ -36,8 +50,7 @@ export default function Username({
         <div className="flex flex-col items-center justify-center">
           <input
             type="text"
-            className="my-4 w-[30ch] rounded-lg bg-secondary p-2.5 text-center focus:outline-none dark:bg-darkSecondary"
-            defaultValue={username}
+            className="my-6 w-[30ch] rounded-lg bg-secondary p-2.5 text-center focus:outline-none dark:bg-darkSecondary"
             autoComplete="off"
             {...register('username', {
               required: 'This field is required',
@@ -68,7 +81,7 @@ export default function Username({
             })}
           />
 
-          <p className="mb-4 mt-[-8px] text-sm opacity-80">
+          <p className="mb-4 mt-[-16px] text-sm opacity-80">
             {errors.username?.message}
           </p>
 
