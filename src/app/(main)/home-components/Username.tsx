@@ -22,6 +22,7 @@ export default function Username({
     formState: { errors },
     setFocus,
     reset,
+    setError,
   } = useForm<{ username: string }>({
     defaultValues: {
       username: username,
@@ -73,7 +74,10 @@ export default function Username({
                   .eq('username', value)
 
                 if (error) {
-                  throw new Error(error.message)
+                  setError('username', {
+                    type: 'custom-error',
+                    message: error.message,
+                  })
                 }
 
                 return data?.length === 0 || 'This username is already in use'
