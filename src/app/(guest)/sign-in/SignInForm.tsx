@@ -1,7 +1,6 @@
 'use client'
 import Button from '@/components/Button'
 import { useForm, SubmitHandler } from 'react-hook-form'
-import { useRouter } from 'next/navigation'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 
 type Inputs = {
@@ -19,7 +18,6 @@ export default function SignInForm() {
   } = useForm<Inputs>()
 
   const supabase = createClientComponentClient()
-  const router = useRouter()
 
   const onSubmit: SubmitHandler<Inputs> = async ({ email, password }) => {
     clearErrors()
@@ -30,19 +28,11 @@ export default function SignInForm() {
     })
 
     if (error) {
-      if (
-        error?.message === 'Invalid login credentials' ||
-        error?.message === 'Email not confirmed'
-      ) {
-        setError('email', {
-          type: 'custom-error',
-          message: error.message,
-        })
-      } else {
-        throw new Error(error?.message)
-      }
+      setError('email', {
+        type: 'custom-error',
+        message: error.message,
+      })
     } else {
-      // router.refresh()
       location.replace(location.origin)
     }
   }

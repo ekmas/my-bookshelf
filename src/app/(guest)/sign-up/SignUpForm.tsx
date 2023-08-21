@@ -18,6 +18,7 @@ export default function SignUpForm() {
     register,
     handleSubmit,
     formState: { errors },
+    setError,
   } = useForm<Inputs>()
 
   const supabase = createClientComponentClient()
@@ -36,7 +37,10 @@ export default function SignUpForm() {
       .insert({ id, email })
 
     if (signUpError || insertRowError) {
-      throw new Error(signUpError?.message || insertRowError?.message)
+      setError('email', {
+        type: 'custom-error',
+        message: signUpError?.message || insertRowError?.message,
+      })
     }
 
     if (!signUpError && !insertRowError) {
