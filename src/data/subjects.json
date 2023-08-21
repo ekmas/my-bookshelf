@@ -1,0 +1,147 @@
+[
+    {
+        "category": "Arts",
+        "subjects": [
+            "Architecture",
+            "Art Instruction",
+            "Art History",
+            "Dance",
+            "Design",
+            "Fashion",
+            "Film",
+            "Graphic Design",
+            "Music",
+            "Music Theory",
+            "Painting",
+            "Photography"
+        ]
+    },
+    {
+        "category": "Animals",
+        "subjects": [
+            "Bears",
+            "Cats",
+            "Kittens",
+            "Dogs",
+            "Puppies"
+        ]
+    },
+    {
+        "category": "Fiction",
+        "subjects": [
+            "Fantasy",
+            "Historical Fiction",
+            "Horror",
+            "Humor",
+            "Literature",
+            "Magic",
+            "Mystery and detective stories",
+            "Plays",
+            "Poetry",
+            "Romance",
+            "Science Fiction",
+            "Short Stories",
+            "Thriller",
+            "Young Adult"
+        ]
+    },
+    {
+        "category": "Science & Mathematics",
+        "subjects": [
+            "Biology",
+            "Chemistry",
+            "Mathematics",
+            "Physics",
+            "Programming"
+        ]
+    },
+    {
+        "category": "Business & Finance",
+        "subjects": [
+            "Management",
+            "Entrepreneurship",
+            "Business Economics",
+            "Business Success",
+            "Finance"
+        ]
+    },
+    {
+        "category": "Children's",
+        "subjects": [
+            "Kids Books",
+            "Stories in Rhyme",
+            "Baby Books",
+            "Bedtime Books",
+            "Picture Books"
+        ]
+    },
+    {
+        "category": "History",
+        "subjects": [
+            "Ancient Civilization",
+            "Archaeology",
+            "Anthropology",
+            "World War II",
+            "Social Life and Customs"
+        ]
+    },
+    {
+        "category": "Health & Wellness",
+        "subjects": [
+            "Cooking",
+            "Cookbooks",
+            "Mental Health",
+            "Exercise",
+            "Nutrition",
+            "Self-help"
+        ]
+    },
+    {
+        "category": "Biography",
+        "subjects": [
+            "Autobiographies",
+            "History",
+            "Politics and Government",
+            "World War II",
+            "Women",
+            "Kings and Rulers",
+            "Composers",
+            "Artists"
+        ]
+    },
+    {
+        "category": "Social Sciences",
+        "subjects": [
+            "Anthropology",
+            "Religion",
+            "Political Science",
+            "Psychology"
+        ]
+    },
+    {
+        "category": "Places",
+        "subjects": [
+            "Brazil",
+            "India",
+            "Indonesia",
+            "United States"
+        ]
+    },
+    {
+        "category": "Textbooks",
+        "subjects": [
+            "History",
+            "Mathematics",
+            "Geography",
+            "Psychology",
+            "Algebra",
+            "Education",
+            "Business & Economics",
+            "Science",
+            "Chemistry",
+            "English Language",
+            "Physics",
+            "Computer Science"
+        ]
+    }
+]
