@@ -35,10 +35,6 @@ export default function IntroductionWrapper() {
     }
   }
 
-  const log = () => {
-    console.log(username, subjects)
-  }
-
   let currentSection
   switch (activeSection) {
     case 'username':
@@ -60,7 +56,7 @@ export default function IntroductionWrapper() {
       )
       break
     case 'success':
-      currentSection = <Success log={log} />
+      currentSection = <Success username={username} subjects={subjects} />
   }
 
   useEffect(() => {
