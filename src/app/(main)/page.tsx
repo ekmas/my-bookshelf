@@ -19,9 +19,19 @@ export default async function Home() {
     if (userData?.length === 0) {
       isFirstLogin = true
 
-      await supabase
-        .from('users')
-        .insert({ id: session.user?.id, email: session.user?.email })
+      let newUserData: any = {
+        id: session.user?.id,
+        email: session.user?.email,
+      }
+
+      if (session.user.app_metadata.provider !== 'email') {
+        newUserData = {
+          ...newUserData,
+          profilePictureUrl: session.user.user_metadata.avatar_url,
+        }
+      }
+
+      await supabase.from('users').insert(newUserData)
     } else {
       if (!userData?.at(0)?.username) {
         isFirstLogin = true
