@@ -10,6 +10,12 @@ module.exports = {
         protocol: 'https',
         hostname: 'avatars.githubusercontent.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'covers.openlibrary.org',
+        port: '',
+        pathname: '/b/id/**',
+      },
     ],
   },
 }
