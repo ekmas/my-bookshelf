@@ -25,12 +25,14 @@ export default function IntroductionWrapper() {
       if (user?.app_metadata.provider === 'google') {
         setUsername(
           user?.user_metadata?.full_name.split(' ').join('') +
-            getRandomNumber(),
+            getRandomNumber(1000),
         )
       }
 
       if (user?.app_metadata.provider === 'github') {
-        setUsername(user?.user_metadata?.preferred_username + getRandomNumber())
+        setUsername(
+          user?.user_metadata?.preferred_username + getRandomNumber(1000),
+        )
       }
     }
   }
@@ -63,5 +65,5 @@ export default function IntroductionWrapper() {
     getUser()
   }, [])
 
-  return <div className="w-full">{currentSection}</div>
+  return <div className="relative z-[100] w-full">{currentSection}</div>
 }

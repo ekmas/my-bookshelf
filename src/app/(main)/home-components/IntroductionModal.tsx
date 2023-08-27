@@ -13,14 +13,10 @@ export default function IntroductionModal({
 
   useEffect(() => {
     if (isFirstLogin) {
-      // im manually setting active to true after 2 seconds because at the moment isFirstLogin changed, div with id modal maybe didn't mount yet
-
-      setTimeout(() => {
-        setIsActive(true)
-      }, 2000)
+      setIsActive(true)
       setTimeout(() => {
         setIsVisible(true)
-      }, 2500)
+      }, 300)
     }
   }, [isFirstLogin])
 
