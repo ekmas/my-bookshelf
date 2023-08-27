@@ -51,7 +51,7 @@ export default function Navbar({ user, isFirstLogin, userData }: Props) {
               )}
             </div>
           ) : (
-            <Button variant={'cta'} href={'/sign-in'} className="mr-10">
+            <Button variant={'cta'} href={'/sign-in'}>
               Sign in
             </Button>
           )}

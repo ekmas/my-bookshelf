@@ -21,7 +21,7 @@ export default function ProfileDropdown({ profilePicture, username }: Props) {
   }
 
   return (
-    <div className="absolute right-0 top-14 w-[200px] rounded-lg border border-black/50 dark:border-white/50">
+    <div className="absolute right-0 top-14 z-50 w-[200px] rounded-lg border border-black/50 bg-white dark:border-white/50 dark:bg-[#121212]">
       <div className="flex flex-col items-center border-0 border-b border-b-black/10 px-5 py-4 dark:border-b-white/10">
         <Image
           className="rounded-full border-2 border-black/30 dark:border-white/30"

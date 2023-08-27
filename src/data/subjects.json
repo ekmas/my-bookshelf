@@ -2,146 +2,129 @@
     {
         "category": "Arts",
         "subjects": [
-            "Architecture",
-            "Art Instruction",
-            "Art History",
-            "Dance",
-            "Design",
-            "Fashion",
-            "Film",
-            "Graphic Design",
-            "Music",
-            "Music Theory",
-            "Painting",
-            "Photography"
+            "architecture",
+            "art instruction",
+            "art history",
+            "dance",
+            "design",
+            "fashion",
+            "film",
+            "graphic design",
+            "music",
+            "music theory",
+            "painting",
+            "photography"
         ]
     },
     {
         "category": "Animals",
         "subjects": [
-            "Bears",
-            "Cats",
-            "Kittens",
-            "Dogs",
-            "Puppies"
+            "bears",
+            "cats",
+            "kittens",
+            "dogs",
+            "puppies"
         ]
     },
     {
         "category": "Fiction",
         "subjects": [
-            "Fantasy",
-            "Historical Fiction",
-            "Horror",
-            "Humor",
-            "Literature",
-            "Magic",
-            "Mystery and detective stories",
-            "Plays",
-            "Poetry",
-            "Romance",
-            "Science Fiction",
-            "Short Stories",
-            "Thriller",
-            "Young Adult"
+            "fantasy",
+            "historical fiction",
+            "horror",
+            "humor",
+            "literature",
+            "magic",
+            "mystery and detective stories",
+            "plays",
+            "poetry",
+            "romance",
+            "science fiction",
+            "short stories",
+            "thriller",
+            "young adult"
         ]
     },
     {
-        "category": "Science & Mathematics",
+        "category": "Science & mathematics",
         "subjects": [
-            "Biology",
-            "Chemistry",
-            "Mathematics",
-            "Physics",
-            "Programming"
+            "biology",
+            "chemistry",
+            "mathematics",
+            "physics",
+            "programming"
         ]
     },
     {
-        "category": "Business & Finance",
+        "category": "Business & finance",
         "subjects": [
-            "Management",
-            "Entrepreneurship",
-            "Business Economics",
-            "Business Success",
-            "Finance"
+            "management",
+            "entrepreneurship",
+            "business economics",
+            "business success",
+            "finance"
         ]
     },
     {
         "category": "Children's",
         "subjects": [
-            "Kids Books",
-            "Stories in Rhyme",
-            "Baby Books",
-            "Bedtime Books",
-            "Picture Books"
+            "kids books",
+            "stories in rhyme",
+            "baby books",
+            "bedtime books",
+            "picture books"
         ]
     },
     {
         "category": "History",
         "subjects": [
-            "Ancient Civilization",
-            "Archaeology",
-            "Anthropology",
-            "World War II",
-            "Social Life and Customs"
+            "ancient civilization",
+            "archaeology",
+            "anthropology",
+            "world war ii",
+            "social life and customs"
         ]
     },
     {
-        "category": "Health & Wellness",
+        "category": "Health & wellness",
         "subjects": [
-            "Cooking",
-            "Cookbooks",
-            "Mental Health",
-            "Exercise",
-            "Nutrition",
-            "Self-help"
+            "cooking",
+            "cookbooks",
+            "mental health",
+            "exercise",
+            "nutrition",
+            "self-help"
         ]
     },
     {
         "category": "Biography",
         "subjects": [
-            "Autobiographies",
-            "History",
-            "Politics and Government",
-            "World War II",
-            "Women",
-            "Kings and Rulers",
-            "Composers",
-            "Artists"
+            "autobiographies",
+            "history",
+            "politics and government",
+            "women",
+            "kings and rulers",
+            "composers",
+            "artists"
         ]
     },
     {
-        "category": "Social Sciences",
+        "category": "Social sciences",
         "subjects": [
-            "Anthropology",
-            "Religion",
-            "Political Science",
-            "Psychology"
-        ]
-    },
-    {
-        "category": "Places",
-        "subjects": [
-            "Brazil",
-            "India",
-            "Indonesia",
-            "United States"
+            "anthropology",
+            "religion",
+            "political science",
+            "psychology"
         ]
     },
     {
         "category": "Textbooks",
         "subjects": [
-            "History",
-            "Mathematics",
-            "Geography",
-            "Psychology",
-            "Algebra",
-            "Education",
-            "Business & Economics",
-            "Science",
-            "Chemistry",
-            "English Language",
-            "Physics",
-            "Computer Science"
+            "geography",
+            "algebra",
+            "education",
+            "english language",
+            "computer science"
         ]
     }
 ]

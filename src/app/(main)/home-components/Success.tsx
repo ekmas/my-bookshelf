@@ -14,12 +14,25 @@ export default function Success({ username, subjects }: Props) {
   const supabase = createClientComponentClient()
 
   const updateUser = async () => {
-    const { error } = await supabase
-      .from('users')
-      .update({ username: username, subjects: subjects })
-      .eq('id', (await supabase.auth.getUser()).data.user?.id)
+    const userId = (await supabase.auth.getUser()).data.user?.id
 
-    if (error) {
+    const userSubjects = subjects.map((subject) => {
+      return {
+        user_id: userId,
+        subject: subject,
+      }
+    })
+
+    const { error: usernameError } = await supabase
+      .from('users')
+      .update({ username: username })
+      .eq('id', userId)
+
+    const { error: subjectsError } = await supabase
+      .from('subjects')
+      .insert(userSubjects)
+
+    if (usernameError || subjectsError) {
       setError(true)
     }
     setLoading(false)
@@ -51,7 +64,7 @@ export default function Success({ username, subjects }: Props) {
             'loading...'
           ) : (
             <>
-              <h2 className="text-center text-xl font-bold">
+              <h2 className="text-center text-xl">
                 You successfully updated your profile.{' '}
               </h2>
 

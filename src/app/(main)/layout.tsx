@@ -22,7 +22,7 @@ export default async function MainLayout({
   if (user) {
     const { data } = await supabase.from('users').select().eq('id', user.id)
 
-    if (!data?.at(0).email) {
+    if (!data?.at(0)?.email) {
       isFirstLogin = true
       userData = {
         profilePictureUrl: user?.user_metadata?.avatar_url,
