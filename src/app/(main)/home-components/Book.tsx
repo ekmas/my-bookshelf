@@ -49,7 +49,7 @@ const Book = forwardRef(
               </div>
             </>
           ) : (
-            <div className="flex h-[200px] w-[130px] items-center justify-center bg-white text-black">
+            <div className="flex h-[200px] w-[130px] items-center justify-center border border-black/10 text-black dark:border-white/10 dark:text-white">
               <p>no cover</p>
             </div>
           )}
