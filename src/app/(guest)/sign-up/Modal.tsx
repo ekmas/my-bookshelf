@@ -38,7 +38,7 @@ export default function Modal({ active, setActive }: Props) {
           opacity: isVisible ? '1' : '0',
           visibility: isVisible ? 'visible' : 'hidden',
         }}
-        className="relative flex w-[450px] flex-col items-center justify-center rounded-md border-2 border-black bg-bg p-10 py-14 text-center transition-all duration-300 dark:border-white dark:bg-darkBg"
+        className="relative flex w-[450px] flex-col items-center justify-center rounded-md border border-black bg-bg p-10 py-14 text-center transition-all duration-300 dark:border-white dark:bg-darkBg"
       >
         <button onClick={closeModal}>
           <MdClose className="absolute right-6 top-6 h-6 w-6" />
