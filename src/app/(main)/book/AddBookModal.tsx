@@ -2,13 +2,21 @@
 import React, { useEffect, useState } from 'react'
 import ReactDom from 'react-dom'
 import { MdClose } from 'react-icons/md'
+import AddBookModalMain from './AddBookModalMain'
 
 type Props = {
   active: boolean
   setActive: React.Dispatch<React.SetStateAction<boolean>>
+  coverId: string | null
+  bookName: string | null
 }
 
-export default function Modal({ active, setActive }: Props) {
+export default function AddBookModal({
+  active,
+  setActive,
+  coverId,
+  bookName,
+}: Props) {
   const [isVisible, setIsVisible] = useState(false)
 
   const closeModal = () => {
@@ -38,19 +46,13 @@ export default function Modal({ active, setActive }: Props) {
           opacity: isVisible ? '1' : '0',
           visibility: isVisible ? 'visible' : 'hidden',
         }}
-        className="relative flex w-[450px] flex-col items-center justify-center rounded-md border border-black bg-bg p-10 py-14 text-center transition-all duration-300 dark:border-white dark:bg-darkBg"
+        className="relative flex w-[450px] flex-col items-center justify-center rounded-md border border-black bg-bg p-10 py-12 text-center transition-all duration-300 dark:border-white dark:bg-darkBg"
       >
         <button onClick={closeModal}>
           <MdClose className="absolute right-6 top-6 h-6 w-6" />
         </button>
-        <h2 className="text-xl font-bold">
-          You successfully created your account!
-        </h2>
 
-        <p className="mt-6">
-          Please verify your account via link in email we've sent you, so you
-          can sign in.
-        </p>
+        <AddBookModalMain bookName={bookName} coverId={coverId} />
       </div>
     </div>,
     document.getElementById('modal') as HTMLElement,

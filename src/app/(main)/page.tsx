@@ -42,7 +42,7 @@ export default async function Home() {
         isFirstLogin = false
 
         const { data: notInterestedSubs } = await supabase
-          .from('notInterestedSubjects')
+          .from('not_interested_subjects')
           .select()
           .eq('user_id', session.user.id)
 
