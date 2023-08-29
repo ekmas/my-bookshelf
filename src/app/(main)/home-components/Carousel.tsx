@@ -25,14 +25,14 @@ export default function Carousel({ data, isRecommended, subjectName }: Props) {
     const userId = (await supabase.auth.getUser()).data.user?.id
 
     if (action === 'hide') {
-      const { error } = await supabase.from('notInterestedSubjects').insert({
+      const { error } = await supabase.from('not_interested_subjects').insert({
         user_id: userId,
         subject: subjectName,
       })
       if (!error) setIsHidden(true)
     } else {
       const { error } = await supabase
-        .from('notInterestedSubjects')
+        .from('not_interested_subjects')
         .delete()
         .eq('subject', subjectName)
       if (!error) setIsHidden(false)
