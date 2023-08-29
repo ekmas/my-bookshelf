@@ -106,7 +106,10 @@ export default async function Book({ params }: { params: { id: string } }) {
 
           <div className="mt-7">
             {session ? (
-              <AddBookButton />
+              <AddBookButton
+                coverId={bookData.covers.at(0)}
+                bookName={bookData?.title}
+              />
             ) : (
               <p>Please sign in, in order to add books to your bookshelves.</p>
             )}
