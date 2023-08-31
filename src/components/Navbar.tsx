@@ -7,6 +7,7 @@ import { User } from '@supabase/supabase-js'
 import Image from 'next/image'
 import defaultpfp from '../../public/defaultprofilepicture.png'
 import ProfileDropdown from './ProfileDropdown'
+import { AiOutlinePlus } from 'react-icons/ai'
 
 type Props = {
   user: User | null
@@ -28,27 +29,34 @@ export default function Navbar({ user, isFirstLogin, userData }: Props) {
         </Button>
         <>
           {user ? (
-            <div className="relative h-12 w-12">
-              <button
-                onClick={() => {
-                  setIsDropdownActive(!isDropdownActive)
-                }}
-                // button is disabled if isFirstLogin because at that moment user's username is still unset
-                disabled={isFirstLogin === true}
-                style={{
-                  backgroundImage: userData?.profilePictureUrl
-                    ? `url(${userData.profilePictureUrl})`
-                    : `url(${defaultpfp.src})`,
-                }}
-                className="max-w-12 h-12 max-h-12 w-12 rounded-full border-2 border-black/30 bg-cover bg-center dark:border-white/30"
-              ></button>
+            <div className="flex items-center">
+              <Button className="mr-5" variant={'cta'} href={'/new-bookshelf'}>
+                <AiOutlinePlus className="mr-2 h-5 w-5 fill-white" />
+                New bookshelf
+              </Button>
 
-              {isDropdownActive && (
-                <ProfileDropdown
-                  username={userData?.username}
-                  profilePicture={userData?.profilePictureUrl}
-                />
-              )}
+              <div className="relative h-12 w-12">
+                <button
+                  onClick={() => {
+                    setIsDropdownActive(!isDropdownActive)
+                  }}
+                  // button is disabled if isFirstLogin because at that moment user's username is still unset
+                  disabled={isFirstLogin === true}
+                  style={{
+                    backgroundImage: userData?.profilePictureUrl
+                      ? `url(${userData.profilePictureUrl})`
+                      : `url(${defaultpfp.src})`,
+                  }}
+                  className="max-w-12 h-12 max-h-12 w-12 rounded-full border-2 border-black/30 bg-cover bg-center dark:border-white/30"
+                ></button>
+
+                {isDropdownActive && (
+                  <ProfileDropdown
+                    username={userData?.username}
+                    profilePicture={userData?.profilePictureUrl}
+                  />
+                )}
+              </div>
             </div>
           ) : (
             <Button variant={'cta'} href={'/sign-in'}>
