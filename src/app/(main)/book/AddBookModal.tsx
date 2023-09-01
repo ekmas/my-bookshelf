@@ -7,16 +7,10 @@ import AddBookModalMain from './AddBookModalMain'
 type Props = {
   active: boolean
   setActive: React.Dispatch<React.SetStateAction<boolean>>
-  coverId: string | null
-  bookName: string | null
+  bookInfo: any
 }
 
-export default function AddBookModal({
-  active,
-  setActive,
-  coverId,
-  bookName,
-}: Props) {
+export default function AddBookModal({ active, setActive, bookInfo }: Props) {
   const [isVisible, setIsVisible] = useState(false)
 
   const closeModal = () => {
@@ -52,7 +46,7 @@ export default function AddBookModal({
           <MdClose className="absolute right-6 top-6 h-6 w-6" />
         </button>
 
-        <AddBookModalMain bookName={bookName} coverId={coverId} />
+        <AddBookModalMain bookInfo={bookInfo} />
       </div>
     </div>,
     document.getElementById('modal') as HTMLElement,

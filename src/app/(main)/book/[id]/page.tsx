@@ -50,6 +50,13 @@ export default async function Book({ params }: { params: { id: string } }) {
     authorName = authorData?.name
   }
 
+  let bookInfo = {
+    book_title: bookData?.title,
+    cover_id: bookData?.covers?.at(0),
+    author_name: authorName,
+    author_id: authorId?.split('/')?.at(2),
+  }
+
   const allAvailableSubjects = allSubjects.reduce((acc: string[], category) => {
     acc.push(...category.subjects)
     return acc
@@ -106,10 +113,7 @@ export default async function Book({ params }: { params: { id: string } }) {
 
           <div className="mt-7">
             {session ? (
-              <AddBookButton
-                coverId={bookData.covers.at(0)}
-                bookName={bookData?.title}
-              />
+              <AddBookButton bookInfo={bookInfo} />
             ) : (
               <p>Please sign in, in order to add books to your bookshelves.</p>
             )}

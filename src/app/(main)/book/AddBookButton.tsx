@@ -4,12 +4,7 @@ import { useState } from 'react'
 import Button from '@/components/Button'
 import AddBookModal from './AddBookModal'
 
-type Props = {
-  coverId: string | null
-  bookName: string | null
-}
-
-export default function AddBookButton({ coverId, bookName }: Props) {
+export default function AddBookButton({ bookInfo }: { bookInfo: any }) {
   const [isModalActive, setIsModalActive] = useState(false)
 
   return (
@@ -21,8 +16,7 @@ export default function AddBookButton({ coverId, bookName }: Props) {
       <AddBookModal
         active={isModalActive}
         setActive={setIsModalActive}
-        coverId={coverId}
-        bookName={bookName}
+        bookInfo={bookInfo}
       />
     </>
   )

@@ -7,12 +7,7 @@ import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import { useParams } from 'next/navigation'
 import loadinggif from '@/../public/loadinggif.gif'
 
-type Props = {
-  bookName: string | null
-  coverId: string | null
-}
-
-export default function AddBookModalMain({ bookName, coverId }: Props) {
+export default function AddBookModalMain({ bookInfo }: { bookInfo: any }) {
   const supabase = createClientComponentClient()
   const { id } = useParams()
 
@@ -42,8 +37,10 @@ export default function AddBookModalMain({ bookName, coverId }: Props) {
     const { error } = await supabase.from('bookshelf_items').insert({
       bookshelf_id: selectedBookshelf?.id,
       book_id: id,
-      name: bookName,
-      cover_id: coverId,
+      book_title: bookInfo.book_title,
+      cover_id: bookInfo.cover_id,
+      author_name: bookInfo.author_name,
+      author_id: bookInfo.author_id,
     })
 
     if (error) {
