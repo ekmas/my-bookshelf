@@ -100,7 +100,7 @@ export default function Carousel({ data, isRecommended, subjectName }: Props) {
         </>
       ) : (
         <div className="flex flex-col items-center justify-center py-10">
-          <h2 className="text-center text-xl">
+          <h2 className="text-center text-xl font-bold">
             We will stop recommending you this subject.
           </h2>
 
