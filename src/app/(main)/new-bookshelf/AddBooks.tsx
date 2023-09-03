@@ -71,7 +71,7 @@ export default function AddBooks({ books, setBooks }: Props) {
             resultsActive && searchQuery.trim().length >= 3
               ? 'visible opacity-100'
               : 'invisible opacity-0',
-            'absolute left-0 top-[70px] z-10 max-h-[200px] w-full overflow-y-auto rounded-lg border border-black/30 bg-white p-[10px] transition-all dark:border-white/30 dark:bg-[#121212]',
+            'scrollbar absolute left-0 top-[70px] z-10 max-h-[200px] w-full overflow-y-auto rounded-lg border border-black/30 bg-white p-[10px] transition-all dark:border-white/30 dark:bg-[#121212]',
           )}
         >
           {loading || error ? (
@@ -120,7 +120,7 @@ export default function AddBooks({ books, setBooks }: Props) {
         </div>
       </div>
 
-      <div className="subjects h-[300px] w-full overflow-y-auto rounded-lg border border-black/30 p-[10px] dark:border-white/30">
+      <div className="scrollbar h-[300px] w-full overflow-y-auto rounded-lg border border-black/30 p-[10px] dark:border-white/30">
         {books.length ? (
           <div className="w-full">
             {books.map((book, index) => {
