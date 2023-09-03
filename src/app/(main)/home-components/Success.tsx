@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import Button from '@/components/Button'
+import loadinggif from '@/../public/loadinggif.gif'
+import Image from 'next/image'
 
 type Props = {
   username: string
@@ -61,10 +63,17 @@ export default function Success({ username, subjects }: Props) {
       ) : (
         <>
           {loading ? (
-            'loading...'
+            <div className="flex items-center justify-center">
+              <Image
+                alt="loading"
+                width={60}
+                height={60}
+                src={loadinggif.src}
+              />
+            </div>
           ) : (
             <>
-              <h2 className="text-center text-xl">
+              <h2 className="text-center text-xl font-bold">
                 You successfully updated your profile.{' '}
               </h2>
 

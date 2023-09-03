@@ -44,7 +44,8 @@ export default function Modal({
       <div
         className={clsx(
           isVisible ? 'visible' : 'hidden',
-          'relative flex w-[450px] flex-col items-center justify-center rounded-md border border-black bg-bg p-10 py-14 text-center transition-all duration-300 dark:border-white dark:bg-darkBg',
+          showCloseButton ? 'py-14' : 'py-10',
+          'relative flex w-[450px] flex-col items-center justify-center rounded-md border border-black bg-bg p-10 text-center transition-all duration-300 dark:border-white dark:bg-darkBg',
         )}
       >
         {showCloseButton && (
