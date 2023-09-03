@@ -10,7 +10,7 @@ export default function Book({
   children?: JSX.Element
 }) {
   return (
-    <div className="mb-[5px] flex items-center justify-between rounded-lg p-[10px] transition-colors hover:bg-[rgb(238,238,238)] dark:hover:bg-[rgb(37,37,37)]">
+    <div className="mb-[5px] flex items-center justify-between rounded-lg p-[10px] transition-colors hover:bg-whiteHover dark:hover:bg-blackHover">
       <div className="flex h-[50px] w-[90%] items-center text-sm">
         {book.cover_i ? (
           <Image

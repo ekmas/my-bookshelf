@@ -25,7 +25,7 @@ export default function Subjects({
 
       <p className="my-6">Choose at least 5 subjects</p>
 
-      <div className="subjects max-h-[300px] overflow-y-auto">
+      <div className="scrollbar max-h-[300px] overflow-y-auto">
         {subjects.map((category) => {
           return (
             <SubjectsAccordion

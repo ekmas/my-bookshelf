@@ -2,7 +2,8 @@
 
 import { useState } from 'react'
 import Button from '@/components/Button'
-import AddBookModal from './AddBookModal'
+import Modal from '@/components/Modal'
+import ModalMain from './ModalMain'
 
 export default function AddBookButton({ bookInfo }: { bookInfo: any }) {
   const [isModalActive, setIsModalActive] = useState(false)
@@ -13,11 +14,9 @@ export default function AddBookButton({ bookInfo }: { bookInfo: any }) {
         Add to bookshelf
       </Button>
 
-      <AddBookModal
-        active={isModalActive}
-        setActive={setIsModalActive}
-        bookInfo={bookInfo}
-      />
+      <Modal active={isModalActive} setActive={setIsModalActive}>
+        <ModalMain bookInfo={bookInfo} />
+      </Modal>
     </>
   )
 }

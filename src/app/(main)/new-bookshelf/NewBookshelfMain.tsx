@@ -5,7 +5,8 @@ import React, { useEffect, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import AddBooks from './AddBooks'
 import Button from '@/components/Button'
-import Modal from './Modal'
+import Modal from '@/components/Modal'
+import ModalMain from './ModalMain'
 
 export default function NewBookshelfMain() {
   const {
@@ -129,7 +130,13 @@ export default function NewBookshelfMain() {
           Create
         </Button>
 
-        <Modal active={isModalActive} error={error} bookshelfId={bookshelfId} />
+        <Modal
+          active={isModalActive}
+          setActive={setIsModalActive}
+          showCloseButton={false}
+        >
+          <ModalMain error={error} bookshelfId={bookshelfId} />
+        </Modal>
       </form>
     </div>
   )

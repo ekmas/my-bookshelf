@@ -3,7 +3,7 @@ import Button from '@/components/Button'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import { useState } from 'react'
-import Modal from './Modal'
+import Modal from '@/components/Modal'
 
 type Inputs = {
   email: string
@@ -118,7 +118,16 @@ export default function SignUpForm() {
         </Button>
       </div>
 
-      <Modal active={isModalActive} setActive={setIsModalActive} />
+      <Modal active={isModalActive} setActive={setIsModalActive}>
+        <h2 className="text-xl font-bold">
+          You successfully created your account!
+        </h2>
+
+        <p className="mt-6">
+          Please verify your account via link in email we've sent you, so you
+          can sign in.
+        </p>
+      </Modal>
     </form>
   )
 }

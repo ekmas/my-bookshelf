@@ -35,14 +35,14 @@ export default function ProfileDropdown({ profilePicture, username }: Props) {
       </div>
       <div>
         <Link
-          className="flex items-center px-5 py-2 transition-colors hover:bg-[rgb(238,238,238)] dark:hover:bg-[rgb(37,37,37)]"
+          className="flex items-center px-5 py-2 transition-colors hover:bg-whiteHover dark:hover:bg-blackHover"
           href="/my-profile"
         >
           <AiOutlineUser className="mr-3 h-5 w-5" />
           My profile
         </Link>
         <button
-          className="flex w-full items-center rounded-b-lg px-5 py-2 transition-colors hover:bg-[rgb(238,238,238)] dark:hover:bg-[rgb(37,37,37)]"
+          className="flex w-full items-center rounded-b-lg px-5 py-2 transition-colors hover:bg-whiteHover dark:hover:bg-blackHover"
           onClick={signOut}
         >
           <GoSignOut className="mr-3 h-5 w-5" />

@@ -7,7 +7,7 @@ import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import { useParams } from 'next/navigation'
 import loadinggif from '@/../public/loadinggif.gif'
 
-export default function AddBookModalMain({ bookInfo }: { bookInfo: any }) {
+export default function ModalMain({ bookInfo }: { bookInfo: any }) {
   const supabase = createClientComponentClient()
   const { id } = useParams()
 
