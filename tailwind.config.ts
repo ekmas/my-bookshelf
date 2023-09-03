@@ -22,6 +22,9 @@ const config: Config = {
 
         accent: '#517b65',
         darkAccent: '#a3c2b2',
+
+        blackHover: '#252525',
+        whiteHover: '#EEEEEE',
       },
       width: {
         container: '1300px',
