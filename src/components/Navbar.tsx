@@ -22,7 +22,7 @@ export default function Navbar({ user, isFirstLogin, userData }: Props) {
   const [isDropdownActive, setIsDropdownActive] = useState(false)
 
   return (
-    <nav>
+    <nav className="fixed left-0 top-0 z-30 w-full bg-white dark:bg-[#121212]">
       <div className="mx-auto flex w-container items-center justify-between px-containerDesktop py-5">
         <Button variant={'link'} href={'/'}>
           <Image src={logo} alt="logo" width={60} />
