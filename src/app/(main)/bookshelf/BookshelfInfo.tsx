@@ -7,14 +7,21 @@ import Link from 'next/link'
 import Button from '@/components/Button'
 import Modal from '@/components/Modal'
 import ShareModal from './ShareModal'
+import DeleteModal from './DeleteModal'
 
 type Props = {
   title: string
   user: { name: string; profilePicture: string | null }
+  isThisMyBookshelf: boolean
 }
 
-export default function BookshelfInfo({ title, user }: Props) {
+export default function BookshelfInfo({
+  title,
+  user,
+  isThisMyBookshelf,
+}: Props) {
   const [isShareModalActive, setIsShareModalActive] = useState(false)
+  const [isDeleteModalActive, setIsDeleteModalActive] = useState(false)
 
   return (
     <aside className="fixed top-[108px] h-[calc(100dvh-108px-70px)] max-h-[calc(100dvh-108px-70px)] w-[350px] rounded-lg bg-secondary p-5 dark:bg-darkSecondary">
@@ -63,6 +70,32 @@ export default function BookshelfInfo({ title, user }: Props) {
       <Modal active={isShareModalActive} setActive={setIsShareModalActive}>
         <ShareModal />
       </Modal>
+
+      {isThisMyBookshelf && (
+        <>
+          <div className="mt-4 grid grid-cols-2 gap-4">
+            <Button className="w-full" size={'sm'}>
+              Edit
+            </Button>
+            <Button
+              onClick={() => {
+                setIsDeleteModalActive(true)
+              }}
+              className="w-full"
+              size={'sm'}
+            >
+              Delete
+            </Button>
+          </div>
+
+          <Modal
+            active={isDeleteModalActive}
+            setActive={setIsDeleteModalActive}
+          >
+            <DeleteModal />
+          </Modal>
+        </>
+      )}
     </aside>
   )
 }
