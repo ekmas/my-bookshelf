@@ -8,6 +8,7 @@ import Button from '@/components/Button'
 import Modal from '@/components/Modal'
 import ShareModal from './ShareModal'
 import DeleteModal from './DeleteModal'
+import { useParams, useRouter } from 'next/navigation'
 
 type Props = {
   title: string
@@ -22,6 +23,8 @@ export default function BookshelfInfo({
 }: Props) {
   const [isShareModalActive, setIsShareModalActive] = useState(false)
   const [isDeleteModalActive, setIsDeleteModalActive] = useState(false)
+
+  const { id } = useParams()
 
   return (
     <aside className="fixed top-[108px] h-[calc(100dvh-108px-70px)] max-h-[calc(100dvh-108px-70px)] w-[350px] rounded-lg bg-secondary p-5 dark:bg-darkSecondary">
@@ -74,7 +77,11 @@ export default function BookshelfInfo({
       {isThisMyBookshelf && (
         <>
           <div className="mt-4 grid grid-cols-2 gap-4">
-            <Button className="w-full" size={'sm'}>
+            <Button
+              href={`/edit-bookshelf/${id}`}
+              className="w-full"
+              size={'sm'}
+            >
               Edit
             </Button>
             <Button
