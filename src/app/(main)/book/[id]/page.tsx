@@ -62,11 +62,11 @@ export default async function Book({ params }: { params: { id: string } }) {
     return acc
   }, [])
 
-  const bookSubjects = bookData?.subjects.map((subject: string) =>
+  const bookSubjects = bookData?.subjects?.map((subject: string) =>
     subject.toLowerCase(),
   )
 
-  const mutualSubjects = bookSubjects.filter((subject: string) =>
+  const mutualSubjects = bookSubjects?.filter((subject: string) =>
     allAvailableSubjects.includes(subject),
   )
 
@@ -89,27 +89,33 @@ export default async function Book({ params }: { params: { id: string } }) {
         <div>
           <h1 className="text-4xl font-bold">{bookData?.title}</h1>
 
-          <Link
-            title={author?.name}
-            className="mt-4 inline-block w-max text-xl transition-none hover:underline"
-            href={authorId}
-          >
-            {authorName || 'Author'}
-          </Link>
+          {authorId ? (
+            <Link
+              title={author?.name}
+              className="mt-4 inline-block w-max text-xl transition-none hover:underline"
+              href={authorId}
+            >
+              {authorName || 'Author'}
+            </Link>
+          ) : (
+            <p className="mt-4 inline-block w-max text-xl">Unknown artist</p>
+          )}
 
-          <div className="mt-4 flex flex-wrap">
-            {mutualSubjects.map((item: string) => {
-              return (
-                <Link
-                  className="m-0.5 rounded-md border border-black/50 px-1.5 py-0.5 text-sm transition-all hover:bg-primary hover:text-white dark:border-white/50"
-                  href={`/subject/${item}`}
-                  key={item}
-                >
-                  {item}
-                </Link>
-              )
-            })}
-          </div>
+          {mutualSubjects.length > 0 && (
+            <div className="mt-4 flex flex-wrap">
+              {mutualSubjects.map((item: string) => {
+                return (
+                  <Link
+                    className="m-0.5 rounded-md border border-black/50 px-1.5 py-0.5 text-sm transition-all hover:bg-primary hover:text-white dark:border-white/50"
+                    href={`/subject/${item}`}
+                    key={item}
+                  >
+                    {item}
+                  </Link>
+                )
+              })}
+            </div>
+          )}
 
           <div className="mt-7">
             {session ? (
