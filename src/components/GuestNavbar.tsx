@@ -1,14 +1,8 @@
-import { Session } from 'inspector'
 import logo from '../../public/logo.png'
 import Button from './Button'
-import { redirect } from 'next/navigation'
 import Image from 'next/image'
 
-export default function GuestNavbar({ session }: { session: Session | null }) {
-  if (session) {
-    redirect('/')
-  }
-
+export default function GuestNavbar() {
   return (
     <nav>
       <div className="mx-auto flex w-container items-center justify-center px-containerDesktop py-[21px]">

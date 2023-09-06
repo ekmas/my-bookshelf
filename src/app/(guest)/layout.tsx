@@ -1,5 +1,6 @@
 import GuestNavbar from '@/components/GuestNavbar'
 import createServerComponentClient from '@/lib/supabase-server'
+import { redirect } from 'next/navigation'
 import { Session } from 'inspector'
 
 export default async function GuestLayout({
@@ -15,9 +16,13 @@ export default async function GuestLayout({
     data: { session: Session | null }
   }
 
+  if (session) {
+    redirect('/')
+  }
+
   return (
     <>
-      <GuestNavbar session={session} />
+      <GuestNavbar />
       {children}
     </>
   )
