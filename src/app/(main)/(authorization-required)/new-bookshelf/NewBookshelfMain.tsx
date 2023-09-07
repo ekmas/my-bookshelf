@@ -1,7 +1,7 @@
 'use client'
 
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import AddBooks from './AddBooks'
 import Button from '@/components/Button'
@@ -17,31 +17,11 @@ export default function NewBookshelfMain() {
 
   const supabase = createClientComponentClient()
 
-  const [bookshelfNames, setBookshelfNames] = useState<any[] | null>(null)
   const [books, setBooks] = useState<any[]>([])
   const [bookshelfId, setBookshelfId] = useState<number | null>(null)
 
   const [isModalActive, setIsModalActive] = useState(false)
   const [error, setError] = useState(false)
-
-  const getUserBookshelves = async () => {
-    const { data } = await supabase
-      .from('bookshelves')
-      .select()
-      .eq('user_id', (await supabase.auth.getUser())?.data?.user?.id)
-
-    if (data?.length) {
-      setBookshelfNames(
-        data?.map((bookshelf) => {
-          return bookshelf.name
-        }),
-      )
-    }
-  }
-
-  useEffect(() => {
-    getUserBookshelves()
-  }, [])
 
   const onSubmit: SubmitHandler<{ bookshelfName: string }> = async ({
     bookshelfName,
@@ -102,20 +82,12 @@ export default function NewBookshelfMain() {
               message: 'Bookshelf name should be at least 2 characters long.',
             },
             maxLength: {
-              value: 20,
-              message: 'Bookshelf name should be shorter than 20 characters.',
+              value: 40,
+              message: 'Bookshelf name should be shorter than 40 characters.',
             },
             pattern: {
               value: /^[a-zA-Z0-9 ]+$/,
               message: 'Only letters and numbers are allowed.',
-            },
-            validate: (value) => {
-              if (bookshelfNames) {
-                return (
-                  !bookshelfNames?.includes(value) ||
-                  'This bookshelf name already exists'
-                )
-              }
             },
           })}
         />
