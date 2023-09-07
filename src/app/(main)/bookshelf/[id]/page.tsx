@@ -19,7 +19,7 @@ export default async function Bookshelf({
   if (bookshelfError) throw new Error(bookshelfError.message)
 
   if (!bookshelf?.length) {
-    throw new Error('This book id does not exist')
+    throw new Error('This bookshelf id does not exist')
   } else {
     const { data: userData, error: userError } = await supabase
       .from('users')
