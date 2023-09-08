@@ -54,6 +54,7 @@ export default function Navbar({ user, isFirstLogin, userData }: Props) {
                   <ProfileDropdown
                     username={userData?.username}
                     profilePicture={userData?.profilePictureUrl}
+                    setIsDropdownActive={setIsDropdownActive}
                   />
                 )}
               </div>

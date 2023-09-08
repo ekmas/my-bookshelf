@@ -33,7 +33,7 @@ export default async function EditBookshelf({
   if (booksError) throw new Error(booksError.message)
 
   return (
-    <main className="mx-auto h-full min-h-[calc(100dvh-88px-70px)] w-container px-containerDesktop py-20">
+    <main className="mx-auto h-full min-h-[calc(100dvh-88px-70px)] w-container px-containerDesktop py-10">
       <h2 className="text-center text-3xl font-bold">Edit bookshelf</h2>
 
       <EditBookshelfMain
