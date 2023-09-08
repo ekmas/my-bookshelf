@@ -5,13 +5,19 @@ import { AiOutlineUser } from 'react-icons/ai'
 import { GoSignOut } from 'react-icons/go'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import { useRouter } from 'next/navigation'
+import { SetStateAction } from 'react'
 
 type Props = {
   profilePicture: string
   username: string | undefined
+  setIsDropdownActive: React.Dispatch<SetStateAction<boolean>>
 }
 
-export default function ProfileDropdown({ profilePicture, username }: Props) {
+export default function ProfileDropdown({
+  profilePicture,
+  username,
+  setIsDropdownActive,
+}: Props) {
   const supabase = createClientComponentClient()
   const router = useRouter()
 
@@ -34,13 +40,16 @@ export default function ProfileDropdown({ profilePicture, username }: Props) {
         <h4 className="mt-2 text-lg font-medium">{username}</h4>
       </div>
       <div>
-        <Link
-          className="flex items-center px-5 py-2 transition-colors hover:bg-whiteHover dark:hover:bg-blackHover"
-          href="/my-profile"
+        <button
+          onClick={() => {
+            router.push(`/user/${username}`)
+            setIsDropdownActive(false)
+          }}
+          className="flex w-full items-center px-5 py-2 transition-colors hover:bg-whiteHover dark:hover:bg-blackHover"
         >
           <AiOutlineUser className="mr-3 h-5 w-5" />
           My profile
-        </Link>
+        </button>
         <button
           className="flex w-full items-center rounded-b-lg px-5 py-2 transition-colors hover:bg-whiteHover dark:hover:bg-blackHover"
           onClick={signOut}
