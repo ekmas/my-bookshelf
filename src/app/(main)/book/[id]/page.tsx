@@ -74,7 +74,7 @@ export default async function Book({ params }: { params: { id: string } }) {
   // because there is a lot of undocumented subjects in open library
 
   return (
-    <main className="mx-auto h-full min-h-[calc(100dvh-88px-70px)] w-container px-containerDesktop py-20">
+    <main className="mx-auto h-full min-h-[calc(100dvh-88px-70px)] w-container px-containerDesktop py-10">
       <div className="grid h-min w-full grid-cols-[1fr_2fr] gap-10">
         <div className="flex justify-center rounded-lg border border-black/10 py-5 dark:border-white/10">
           {bookData?.covers?.at(0) ? (
