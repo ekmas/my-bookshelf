@@ -12,7 +12,9 @@ export default function Bookshelves({
   username,
 }: Props) {
   return (
-    <div className="mt-10">
+    <div className="mt-16">
+      {bookshelves && bookshelves.length > 0 && <h2 className='mb-8 text-2xl font-medium'>{isThisMyBookshelf ? 'My' : username + "'s"}  bookshelves</h2>}
+
       {bookshelves?.length ? (
         <div className="grid grid-cols-3 gap-5">
           {bookshelves.map((bookshelf) => {
