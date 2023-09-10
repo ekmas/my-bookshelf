@@ -16,6 +16,10 @@ module.exports = {
         port: '',
         pathname: '/b/id/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'xijisbzstulzycqmfnjo.supabase.co',
+      },
     ],
   },
 }
