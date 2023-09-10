@@ -13,8 +13,6 @@ module.exports = {
       {
         protocol: 'https',
         hostname: 'covers.openlibrary.org',
-        port: '',
-        pathname: '/b/id/**',
       },
       {
         protocol: 'https',
