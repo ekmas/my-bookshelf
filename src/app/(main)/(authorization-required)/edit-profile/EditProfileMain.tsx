@@ -1,24 +1,38 @@
 'use client'
 
+import { useState } from 'react'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import { SubmitHandler, useForm } from 'react-hook-form'
+import ProfilePicture from './ProfilePicture'
+import Button from '@/components/Button'
+import { useRouter } from 'next/navigation'
+import Modal from '@/components/Modal'
+import ModalMain from './ModalMain'
 
 type Props = {
   currentUsername: string
-  profilePictureUrl: string
+  currentprofilePictureUrl: string
 }
 
 export default function EditProfileMain({
   currentUsername,
-  profilePictureUrl,
+  currentprofilePictureUrl,
 }: Props) {
+  const [profilePictureUrl, setProfilePictureUrl] = useState<string | null>(
+    currentprofilePictureUrl,
+  )
+  const [err, setErr] = useState(false)
+  const [isModalActive, setIsModalActive] = useState(false)
+
   const supabase = createClientComponentClient()
+  const router = useRouter()
 
   const {
     register,
     handleSubmit,
     formState: { errors },
     setError,
+    getValues,
   } = useForm<{ username: string }>({
     defaultValues: {
       username: currentUsername,
@@ -28,18 +42,38 @@ export default function EditProfileMain({
   const onSubmit: SubmitHandler<{ username: string }> = async ({
     username,
   }) => {
-    console.log(username)
+    if (
+      username === currentUsername &&
+      profilePictureUrl === currentprofilePictureUrl
+    ) {
+      router.push(`/user/${currentUsername}`)
+    } else {
+      const { error } = await supabase
+        .from('users')
+        .update({ username: username, profilePictureUrl: profilePictureUrl })
+        .eq('id', (await supabase.auth.getUser()).data.user?.id)
+
+      if (error) setErr(true)
+    }
+
+    setIsModalActive(true)
   }
 
   return (
-    <div className="mx-auto mt-8 flex w-[600px] justify-center">
+    <div className="mx-auto mt-8 flex w-[600px] flex-col items-center justify-center">
+      <ProfilePicture
+        currentprofilePictureUrl={currentprofilePictureUrl}
+        setProfilePictureUrl={setProfilePictureUrl}
+        setErr={setErr}
+      />
+
       <form
         className="flex w-full flex-col items-center"
         onSubmit={handleSubmit(onSubmit)}
       >
         <input
           type="text"
-          className="mb-6 w-[30ch] rounded-lg bg-secondary px-5 py-4 focus:outline-none dark:bg-darkSecondary"
+          className="mb-6 mt-5 w-[30ch] rounded-lg bg-secondary px-5 py-4 focus:outline-none dark:bg-darkSecondary"
           placeholder="Username"
           autoComplete="off"
           {...register('username', {
@@ -77,7 +111,19 @@ export default function EditProfileMain({
         <p className="mb-4 mt-[-16px] text-sm opacity-80">
           {errors.username?.message}
         </p>
+
+        <Button type="submit" className="mt-5 w-max" variant={'cta'}>
+          Update
+        </Button>
       </form>
+
+      <Modal
+        showCloseButton={false}
+        active={isModalActive}
+        setActive={setIsModalActive}
+      >
+        <ModalMain username={getValues('username')} error={err} />
+      </Modal>
     </div>
   )
 }
