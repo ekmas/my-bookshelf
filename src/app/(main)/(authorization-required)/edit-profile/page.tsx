@@ -19,7 +19,7 @@ export default async function EditProfile() {
 
       <EditProfileMain
         currentUsername={data?.at(0).username}
-        profilePictureUrl={data?.at(0).profilePictureUrl}
+        currentprofilePictureUrl={data?.at(0).profilePictureUrl}
       />
     </main>
   )
