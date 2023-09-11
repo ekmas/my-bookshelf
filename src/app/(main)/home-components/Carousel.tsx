@@ -27,14 +27,14 @@ export default function Carousel({ data, isRecommended, subjectName }: Props) {
     if (action === 'hide') {
       const { error } = await supabase.from('not_interested_subjects').insert({
         user_id: userId,
-        subject: subjectName,
+        subject: subjectName.toLowerCase(),
       })
       if (!error) setIsHidden(true)
     } else {
       const { error } = await supabase
         .from('not_interested_subjects')
         .delete()
-        .eq('subject', subjectName)
+        .eq('subject', subjectName.toLowerCase())
       if (!error) setIsHidden(false)
     }
   }
