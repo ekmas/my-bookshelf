@@ -12,31 +12,36 @@ export default async function SubjectPageLayout({
 
   const userId = (await supabase.auth.getUser()).data.user?.id
 
-  let { data: subjects, error: subjectsError } = await supabase
-    .from('subjects')
-    .select()
-    .eq('user_id', userId)
+  let subjects: any[] | null = null
+  let notInterestedSubjects: any[] | null = null
 
-  let { data: notInterestedSubjects, error: notInterestedSubjectsError } =
-    await supabase
-      .from('not_interested_subjects')
+  if (userId) {
+    let { data: subjects, error: subjectsError } = await supabase
+      .from('subjects')
       .select()
       .eq('user_id', userId)
 
-  if (subjectsError || notInterestedSubjectsError) {
-    throw new Error(
-      subjectsError?.message || notInterestedSubjectsError?.message,
-    )
-  }
+    let { data: notInterestedSubjects, error: notInterestedSubjectsError } =
+      await supabase
+        .from('not_interested_subjects')
+        .select()
+        .eq('user_id', userId)
 
-  if (subjects?.length) {
-    subjects = subjects.map((subject) => subject.subject)
-  }
+    if (subjectsError || notInterestedSubjectsError) {
+      throw new Error(
+        subjectsError?.message || notInterestedSubjectsError?.message,
+      )
+    }
 
-  if (notInterestedSubjects?.length) {
-    notInterestedSubjects = notInterestedSubjects.map(
-      (subject) => subject.subject,
-    )
+    if (subjects?.length) {
+      subjects = subjects.map((subject) => subject.subject)
+    }
+
+    if (notInterestedSubjects?.length) {
+      notInterestedSubjects = notInterestedSubjects.map(
+        (subject) => subject.subject,
+      )
+    }
   }
 
   params.subject = decodeURI(params.subject)
@@ -47,12 +52,14 @@ export default async function SubjectPageLayout({
   return (
     <main className="mx-auto h-full min-h-[calc(100dvh-88px-70px)] w-container px-containerDesktop py-10">
       <h1 className="text-4xl font-bold">{subjectHeading}</h1>
-      <SubjectButtons
-        subject={decodeURI(params.subject)}
-        subjects={subjects}
-        notInterestedSubjects={notInterestedSubjects}
-        userId={userId}
-      />
+      {userId && (
+        <SubjectButtons
+          subject={decodeURI(params.subject)}
+          subjects={subjects}
+          notInterestedSubjects={notInterestedSubjects}
+          userId={userId}
+        />
+      )}
       {children}
     </main>
   )
