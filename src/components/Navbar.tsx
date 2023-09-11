@@ -9,6 +9,7 @@ import defaultpfp from '../../public/defaultprofilepicture.png'
 import ProfileDropdown from './ProfileDropdown'
 import { AiOutlinePlus } from 'react-icons/ai'
 import { GoSignIn } from 'react-icons/go'
+import Search from './Search'
 
 type Props = {
   user: User | null
@@ -25,12 +26,17 @@ export default function Navbar({ user, isFirstLogin, userData }: Props) {
   return (
     <nav className="fixed left-0 top-0 z-30 w-full bg-white dark:bg-[#121212]">
       <div className="mx-auto flex w-container items-center justify-between px-containerDesktop py-5">
-        <Button variant={'link'} href={'/'}>
-          <Image src={logo} alt="logo" width={60} />
-        </Button>
+        <div className="w-[280px]">
+          <Button variant={'link'} href={'/'}>
+            <Image src={logo} alt="logo" width={60} />
+          </Button>
+        </div>
+        <div className="w-[400px]">
+          <Search />
+        </div>
         <>
           {user ? (
-            <div className="flex items-center">
+            <div className="flex w-[280px] items-center">
               <Button className="mr-5" variant={'cta'} href={'/new-bookshelf'}>
                 <AiOutlinePlus className="mr-2 h-5 w-5 fill-white" />
                 New bookshelf
