@@ -6,9 +6,11 @@ import { useParams, useRouter } from 'next/navigation'
 export default function Pagination({
   numberOfPages,
   currentPage,
+  route,
 }: {
   numberOfPages: number
   currentPage: number
+  route: string
 }) {
   const router = useRouter()
   const { id } = useParams()
@@ -19,7 +21,7 @@ export default function Pagination({
         <Button
           disabled={currentPage <= 1}
           onClick={() => {
-            router.push(`/author/${id}?page=${currentPage - 1}`)
+            router.push(`/${route}/${id}?page=${currentPage - 1}`)
           }}
         >
           Prev
@@ -27,7 +29,7 @@ export default function Pagination({
         <Button
           disabled={currentPage >= numberOfPages}
           onClick={() => {
-            router.push(`/author/${id}?page=${currentPage + 1}`)
+            router.push(`/${route}?page=${currentPage + 1}`)
           }}
         >
           Next
