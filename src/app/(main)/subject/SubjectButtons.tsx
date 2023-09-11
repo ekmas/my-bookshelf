@@ -89,7 +89,7 @@ export default function SubjectButtons({
   }
 
   return (
-    <div className="mt-5">
+    <div className="mt-8">
       <div className="flex items-center gap-6">
         {!isFavorite && !isMuted ? (
           <>

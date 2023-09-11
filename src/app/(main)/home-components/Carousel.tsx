@@ -57,7 +57,10 @@ export default function Carousel({ data, isRecommended, subjectName }: Props) {
             </h2>
 
             {isRecommended && (
-              <Button onClick={() => handleSubject('hide')}>
+              <Button
+                className="border border-black/10 dark:border-white/10"
+                onClick={() => handleSubject('hide')}
+              >
                 Hide this subject
               </Button>
             )}
@@ -108,7 +111,7 @@ export default function Carousel({ data, isRecommended, subjectName }: Props) {
             onClick={() => {
               handleSubject('show')
             }}
-            className="mt-6"
+            className="mt-6 border border-black/10 dark:border-white/10"
           >
             Undo
           </Button>

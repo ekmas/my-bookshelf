@@ -79,7 +79,7 @@ export default function BookshelfInfo({
           <div className="mt-4 grid grid-cols-2 gap-4">
             <Button
               href={`/edit-bookshelf/${id}`}
-              className="w-full"
+              className="w-full border border-black/10 dark:border-white/10"
               size={'sm'}
             >
               Edit
@@ -88,7 +88,7 @@ export default function BookshelfInfo({
               onClick={() => {
                 setIsDeleteModalActive(true)
               }}
-              className="w-full"
+              className="w-full border border-black/10 dark:border-white/10"
               size={'sm'}
             >
               Delete

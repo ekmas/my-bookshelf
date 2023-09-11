@@ -28,8 +28,6 @@ export default async function Subject({
 
   return (
     <div className="mt-8">
-      <h4 className="mb-5 text-2xl font-bold">Books</h4>
-
       {books.works.length > 0 ? (
         <div className="grid grid-cols-4 gap-5 py-6">
           {books.works.map((book: any, index: number) => {

@@ -8,6 +8,7 @@ import Image from 'next/image'
 import defaultpfp from '../../public/defaultprofilepicture.png'
 import ProfileDropdown from './ProfileDropdown'
 import { AiOutlinePlus } from 'react-icons/ai'
+import { GoSignIn } from 'react-icons/go'
 
 type Props = {
   user: User | null
@@ -61,6 +62,7 @@ export default function Navbar({ user, isFirstLogin, userData }: Props) {
             </div>
           ) : (
             <Button variant={'cta'} href={'/sign-in'}>
+              <GoSignIn className="mr-3 h-5 w-5" />
               Sign in
             </Button>
           )}

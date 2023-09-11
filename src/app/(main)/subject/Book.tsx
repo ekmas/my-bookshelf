@@ -65,7 +65,7 @@ const Book = forwardRef(
         {author && (
           <Link
             title={author.name}
-            className="mt-1.5 w-[90%] overflow-hidden text-ellipsis whitespace-nowrap text-center transition-none hover:underline"
+            className="mt-1.5 w-[90%] overflow-hidden text-ellipsis whitespace-nowrap text-center opacity-90 transition-none hover:underline"
             href={authorId}
           >
             {author.name}

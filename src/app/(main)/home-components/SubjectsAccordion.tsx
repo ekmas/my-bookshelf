@@ -35,7 +35,7 @@ export default function SubjectsAccordion({ category, children }: Props) {
       <div
         ref={contentRef}
         style={{ height: showContent ? `${contentHeight}` : '0' }}
-        className="flex flex-wrap justify-center overflow-hidden rounded-[5px] bg-white/50 transition-[height] ease-in-out dark:bg-black/50"
+        className="flex flex-wrap justify-center overflow-hidden rounded-[5px] bg-white/50 transition-[height] ease-in-out dark:bg-darkBg"
       >
         <div className="m-3">{children}</div>
       </div>
