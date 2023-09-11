@@ -1,5 +1,5 @@
 import Book from '../Book'
-import Pagination from '../Pagination'
+import Pagination from '@/components/Pagination'
 
 export default async function Author({
   params,
@@ -49,6 +49,7 @@ export default async function Author({
           <Pagination
             numberOfPages={Math.ceil(authorBooks.size / 24)}
             currentPage={page}
+            route={`author/${params.id}`}
           />
         )}
       </div>
