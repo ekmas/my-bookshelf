@@ -14,13 +14,13 @@ export default async function EditProfile() {
   }
 
   return (
-    <main className="mx-auto h-full min-h-[calc(100dvh-88px-70px)] w-container px-containerDesktop py-10">
+    <div className="mx-auto h-full w-container px-containerDesktop py-10">
       <h2 className="text-center text-3xl font-bold">Edit profile</h2>
 
       <EditProfileMain
         currentUsername={data?.at(0).username}
         currentprofilePictureUrl={data?.at(0).profilePictureUrl}
       />
-    </main>
+    </div>
   )
 }

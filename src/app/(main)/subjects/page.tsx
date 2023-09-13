@@ -3,7 +3,7 @@ import Subject from './Subject'
 
 export default function Subjects() {
   return (
-    <main className="mx-auto h-full min-h-[calc(100dvh-88px-70px)] w-container px-containerDesktop py-10">
+    <div className="mx-auto h-full w-container px-containerDesktop py-10">
       <h2 className="text-center text-3xl font-bold">Subjects</h2>
 
       <div className="py-10">
@@ -11,6 +11,6 @@ export default function Subjects() {
           return <Subject key={subject.category} subject={subject} />
         })}
       </div>
-    </main>
+    </div>
   )
 }

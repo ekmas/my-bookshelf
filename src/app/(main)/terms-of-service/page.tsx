@@ -1,6 +1,6 @@
 export default function TermsOfService() {
   return (
-    <main className="mx-auto h-full min-h-[calc(100dvh-88px-70px)] w-[900px] px-containerDesktop py-10">
+    <div className="mx-auto h-full w-[900px] px-containerDesktop py-10">
       <h2 className="text-center text-3xl font-bold">Terms of service</h2>
 
       <ol className="my-10 list-inside list-decimal leading-relaxed">
@@ -47,6 +47,6 @@ export default function TermsOfService() {
           changes constitutes acceptance of the updated Terms.
         </li>
       </ol>
-    </main>
+    </div>
   )
 }

@@ -40,7 +40,9 @@ export default async function MainLayout({
   return (
     <>
       <Navbar user={user} isFirstLogin={isFirstLogin} userData={userData} />
-      <div className="pt-[96px]">{children}</div>
+      <main className="min-h-[calc(100dvh-128px)] pb-10 pt-[96px]">
+        {children}
+      </main>
     </>
   )
 }

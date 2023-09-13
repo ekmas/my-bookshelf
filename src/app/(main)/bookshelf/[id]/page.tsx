@@ -49,7 +49,7 @@ export default async function Bookshelf({
   }
 
   return (
-    <main className="mx-auto h-full min-h-[calc(100dvh-108px-70px)] w-container px-containerDesktop">
+    <div className="mx-auto h-full w-container px-containerDesktop">
       <BookshelfInfo
         title={bookshelf?.at(0)?.name}
         user={user}
@@ -63,11 +63,11 @@ export default async function Bookshelf({
             })}
           </>
         ) : (
-          <div className="flex h-[calc(100dvh-108px-70px)] items-center justify-center">
+          <div className="flex h-[calc(100dvh-108px-128px)] items-center justify-center">
             This bookshelf does not have any books yet.
           </div>
         )}
       </div>
-    </main>
+    </div>
   )
 }

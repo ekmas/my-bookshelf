@@ -22,7 +22,7 @@ export default async function AuthorPageLayout({
   const data = await res.json()
 
   return (
-    <main className="mx-auto h-full min-h-[calc(100dvh-88px-70px)] w-container px-containerDesktop py-10">
+    <div className="mx-auto h-full w-container px-containerDesktop py-10">
       <div className="grid h-min w-full grid-cols-[1fr_2fr] gap-10">
         <div className="flex justify-center rounded-lg border border-black/10 py-5 dark:border-white/10">
           {data?.photos?.at(0) ? (
@@ -50,6 +50,6 @@ export default async function AuthorPageLayout({
         </div>
       )}
       {children}
-    </main>
+    </div>
   )
 }

@@ -27,7 +27,7 @@ export default function BookshelfInfo({
   const { id } = useParams()
 
   return (
-    <aside className="fixed top-[108px] h-[calc(100dvh-108px-70px)] max-h-[calc(100dvh-108px-70px)] w-[350px] rounded-lg bg-secondary p-5 dark:bg-darkSecondary">
+    <aside className="fixed top-[108px] h-[calc(100dvh-108px-128px-40px)] max-h-[calc(100dvh-108px-128px-40px)] w-[350px] rounded-lg bg-secondary p-5 dark:bg-darkSecondary">
       <h2 className="text-2xl font-bold">{title}</h2>
 
       <Link

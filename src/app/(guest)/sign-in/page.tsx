@@ -3,7 +3,7 @@ import SignInProviders from './SignInProviders'
 
 export default function SignIn() {
   return (
-    <main className="mx-auto flex h-full min-h-[calc(100dvh-88px-70px)] w-container items-center justify-center px-containerDesktop py-20">
+    <main className="mx-auto flex min-h-[calc(100dvh-128px-96px)] w-container items-center justify-center px-containerDesktop py-20">
       <div className="w-[500px]">
         <h1 className="text-center text-3xl font-bold">Sign in</h1>
 

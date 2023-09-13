@@ -74,7 +74,7 @@ export default async function Book({ params }: { params: { id: string } }) {
   // because there is a lot of undocumented subjects in open library
 
   return (
-    <main className="mx-auto h-full min-h-[calc(100dvh-88px-70px)] w-container px-containerDesktop py-10">
+    <div className="mx-auto h-full w-container px-containerDesktop py-10">
       <div className="grid h-min w-full grid-cols-[1fr_2fr] gap-10">
         <div className="flex justify-center rounded-lg border border-black/10 py-5 dark:border-white/10">
           {bookData?.covers?.at(0) ? (
@@ -101,7 +101,7 @@ export default async function Book({ params }: { params: { id: string } }) {
             <p className="mt-4 inline-block w-max text-xl">Unknown artist</p>
           )}
 
-          {mutualSubjects.length > 0 && (
+          {mutualSubjects?.length > 0 && (
             <div className="mt-4 flex flex-wrap">
               {mutualSubjects.map((item: string) => {
                 return (
@@ -132,6 +132,6 @@ export default async function Book({ params }: { params: { id: string } }) {
           <div className="text-lg">{bookData.description}</div>
         </div>
       )}
-    </main>
+    </div>
   )
 }

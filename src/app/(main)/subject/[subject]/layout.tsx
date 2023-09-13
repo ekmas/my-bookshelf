@@ -50,7 +50,7 @@ export default async function SubjectPageLayout({
     params.subject[0].toUpperCase() + params.subject.slice(1)
 
   return (
-    <main className="mx-auto h-full min-h-[calc(100dvh-88px-70px)] w-container px-containerDesktop py-10">
+    <div className="mx-auto h-full w-container px-containerDesktop py-10">
       <h1 className="text-4xl font-bold">{subjectHeading}</h1>
       {userId && (
         <SubjectButtons
@@ -61,6 +61,6 @@ export default async function SubjectPageLayout({
         />
       )}
       {children}
-    </main>
+    </div>
   )
 }
