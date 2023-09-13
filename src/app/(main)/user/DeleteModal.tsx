@@ -3,7 +3,7 @@
 import Button from '@/components/Button'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import Image from 'next/image'
-import { useParams, useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import loadinggif from '@/../public/loadinggif.gif'
 
@@ -50,7 +50,7 @@ export default function DeleteModal({ id }: { id: any }) {
                 variant={'cta'}
                 className="mt-6"
                 onClick={() => {
-                  router.refresh()
+                  location.reload()
                 }}
               >
                 Try again

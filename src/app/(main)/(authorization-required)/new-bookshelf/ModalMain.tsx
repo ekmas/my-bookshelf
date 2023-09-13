@@ -1,6 +1,5 @@
 'use client'
 import Button from '@/components/Button'
-import { useRouter } from 'next/navigation'
 
 type Props = {
   error: boolean
@@ -8,8 +7,6 @@ type Props = {
 }
 
 export default function ModalMain({ error, bookshelfId }: Props) {
-  const router = useRouter()
-
   return (
     <>
       {!error ? (
@@ -37,7 +34,7 @@ export default function ModalMain({ error, bookshelfId }: Props) {
           <Button
             className="mt-6"
             onClick={() => {
-              router.refresh()
+              location.reload()
             }}
             variant={'cta'}
           >

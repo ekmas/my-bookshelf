@@ -51,7 +51,7 @@ export default function DeleteModal() {
                 variant={'cta'}
                 className="mt-6"
                 onClick={() => {
-                  router.refresh()
+                  location.reload()
                 }}
               >
                 Try again
