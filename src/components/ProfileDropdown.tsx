@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import defaultpfp from '../../public/defaultprofilepicture.png'
-import Link from 'next/link'
 import { AiOutlineUser } from 'react-icons/ai'
 import { GoSignOut } from 'react-icons/go'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
@@ -27,7 +26,7 @@ export default function ProfileDropdown({
   }
 
   return (
-    <div className="absolute right-0 top-[68px] z-50 w-[200px] rounded-lg border border-black/50 bg-white dark:border-white/50 dark:bg-[#121212]">
+    <div className="absolute right-0 top-[68px] z-50 min-w-[200px] rounded-lg border border-black/50 bg-white dark:border-white/50 dark:bg-[#121212]">
       <div className="flex flex-col items-center border-0 border-b border-b-black/10 px-5 py-4 dark:border-b-white/10">
         <Image
           className="rounded-full border-2 border-black/30 dark:border-white/30"

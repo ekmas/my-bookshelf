@@ -34,9 +34,9 @@ export default function Navbar({ user, isFirstLogin, userData }: Props) {
         <div className="w-[400px]">
           <Search />
         </div>
-        <>
+        <div className="flex w-[280px] justify-end">
           {user ? (
-            <div className="flex w-[280px] items-center">
+            <div className="flex items-center ">
               <Button className="mr-5" variant={'cta'} href={'/new-bookshelf'}>
                 <AiOutlinePlus className="mr-2 h-5 w-5 fill-white" />
                 New bookshelf
@@ -49,13 +49,16 @@ export default function Navbar({ user, isFirstLogin, userData }: Props) {
                   }}
                   // button is disabled if isFirstLogin because at that moment user's username is still unset
                   disabled={isFirstLogin === true}
-                  style={{
-                    backgroundImage: userData?.profilePictureUrl
-                      ? `url(${userData.profilePictureUrl})`
-                      : `url(${defaultpfp.src})`,
-                  }}
-                  className="max-w-12 h-12 max-h-12 w-12 rounded-full border-2 border-black/30 bg-cover bg-center dark:border-white/30"
-                ></button>
+                  className="max-w-12 h-12 max-h-12 w-12 rounded-full"
+                >
+                  <Image
+                    className="rounded-full border-2 border-black/30 dark:border-white/30"
+                    width={48}
+                    height={48}
+                    src={userData?.profilePictureUrl || defaultpfp.src}
+                    alt="pfp"
+                  />
+                </button>
 
                 {isDropdownActive && (
                   <ProfileDropdown
@@ -72,7 +75,7 @@ export default function Navbar({ user, isFirstLogin, userData }: Props) {
               Sign in
             </Button>
           )}
-        </>
+        </div>
       </div>
     </nav>
   )
