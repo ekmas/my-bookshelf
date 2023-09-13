@@ -45,7 +45,7 @@ export default async function Author({
           </p>
         )}
 
-        {authorBooks.size > 24 * page && (
+        {authorBooks.size > 24 * (page - 1) && authorBooks.size > 24 && (
           <Pagination
             numberOfPages={Math.ceil(authorBooks.size / 24)}
             currentPage={page}

@@ -42,7 +42,7 @@ export default async function Subject({
         </p>
       )}
 
-      {books.work_count > 24 * page && (
+      {books.work_count > 24 * (page - 1) && books.work_count > 24 && (
         <Pagination
           numberOfPages={Math.ceil(books.work_count / 24)}
           currentPage={page}

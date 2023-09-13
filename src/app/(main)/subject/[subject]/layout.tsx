@@ -16,12 +16,12 @@ export default async function SubjectPageLayout({
   let notInterestedSubjects: any[] | null = null
 
   if (userId) {
-    let { data: subjects, error: subjectsError } = await supabase
+    let { data: subjectsData, error: subjectsError } = await supabase
       .from('subjects')
       .select()
       .eq('user_id', userId)
 
-    let { data: notInterestedSubjects, error: notInterestedSubjectsError } =
+    let { data: notInterestedSubjectsData, error: notInterestedSubjectsError } =
       await supabase
         .from('not_interested_subjects')
         .select()
@@ -33,12 +33,12 @@ export default async function SubjectPageLayout({
       )
     }
 
-    if (subjects?.length) {
-      subjects = subjects.map((subject) => subject.subject)
+    if (subjectsData?.length) {
+      subjects = subjectsData.map((subject) => subject.subject)
     }
 
-    if (notInterestedSubjects?.length) {
-      notInterestedSubjects = notInterestedSubjects.map(
+    if (notInterestedSubjectsData?.length) {
+      notInterestedSubjects = notInterestedSubjectsData.map(
         (subject) => subject.subject,
       )
     }

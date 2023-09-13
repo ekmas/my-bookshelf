@@ -21,7 +21,7 @@ export default function Pagination({
         <Button
           disabled={currentPage <= 1}
           onClick={() => {
-            router.push(`/${route}/${id}?page=${currentPage - 1}`)
+            router.push(`/${route}?page=${currentPage - 1}`)
           }}
         >
           Prev
