@@ -48,7 +48,7 @@ export default function SignInForm() {
         <input
           type="email"
           placeholder="Email"
-          className="mb-3 w-full rounded-lg bg-secondary px-5 py-4 text-lg focus:outline-none dark:bg-darkSecondary"
+          className="mb-3 w-full rounded-lg bg-secondary px-5 py-4 text-lg m550:text-base focus:outline-none dark:bg-darkSecondary"
           autoComplete="off"
           {...register('email', { required: 'This field is required' })}
         />
@@ -58,7 +58,7 @@ export default function SignInForm() {
         <input
           type="password"
           placeholder="Password"
-          className="my-3 w-full rounded-lg bg-secondary px-5 py-4 text-lg focus:outline-none dark:bg-darkSecondary"
+          className="my-3 w-full rounded-lg bg-secondary px-5 py-4 text-lg m550:text-base focus:outline-none dark:bg-darkSecondary"
           {...register('password', { required: 'This field is required' })}
         />
 
@@ -66,11 +66,11 @@ export default function SignInForm() {
           {errors.password?.message}
         </p>
 
-        <Button className="mt-3 w-full text-lg" type="submit" variant={'cta'}>
+        <Button className="mt-3 w-full text-lg m550:text-base" type="submit" variant={'cta'}>
           Sign in
         </Button>
 
-        <div className="mt-2 flex items-center justify-between">
+        <div className="mt-2 flex items-center m400:flex-col m400:gap-2 m550:text-sm justify-between">
           <Button
             onClick={() => setIsForgotPasswordModal(true)}
             type="button"

@@ -78,7 +78,7 @@ export default function ModalMain() {
               <div className="flex flex-col items-center justify-center">
                 <input
                   type="text"
-                  className="my-8 w-[30ch] rounded-lg bg-secondary p-2.5 text-center focus:outline-none dark:bg-darkSecondary"
+                  className="my-8 w-[30ch] m450:w-[25ch] m450:text-sm m350:w-[20ch] rounded-lg bg-secondary p-2.5 text-center focus:outline-none dark:bg-darkSecondary"
                   autoComplete="off"
                   {...register('email', {
                     required: 'This field is required',

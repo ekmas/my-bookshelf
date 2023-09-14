@@ -24,7 +24,7 @@ export default function SignInProviders() {
         onClick={() => {
           signIn('google')
         }}
-        className="py-4"
+        className="py-3"
         variant={'cta'}
       >
         <BsGoogle className="h-6 w-6" />
@@ -33,7 +33,7 @@ export default function SignInProviders() {
         onClick={() => {
           signIn('github')
         }}
-        className="py-4"
+        className="py-3"
         variant={'cta'}
       >
         <BsGithub className="h-6 w-6" />

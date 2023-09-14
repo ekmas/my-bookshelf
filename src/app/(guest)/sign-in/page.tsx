@@ -3,9 +3,9 @@ import SignInProviders from './SignInProviders'
 
 export default function SignIn() {
   return (
-    <main className="mx-auto flex min-h-[calc(100dvh-128px-96px)] w-container items-center justify-center px-containerDesktop py-20">
-      <div className="w-[500px]">
-        <h1 className="text-center text-3xl font-bold">Sign in</h1>
+    <main className="mx-auto flex min-h-[calc(100dvh-128px-96px)] m400:px-containerMobile max-w-container w-full items-center justify-center px-containerDesktop py-20">
+      <div className="m550:w-full w-[500px]">
+        <h1 className="text-center text-3xl font-bold m450:text-2xl">Sign in</h1>
 
         <p className="mt-4 text-center opacity-80">
           Welcome back! Please enter your details.
@@ -16,7 +16,7 @@ export default function SignIn() {
         <div className="my-5 flex items-center">
           <hr className="h-0.5 w-full bg-black opacity-50 dark:bg-white" />
           <div className="shrink-0 px-3">
-            <p className="text-sm">or sign in with</p>
+            <p className="text-sm opacity-80">or sign in with</p>
           </div>
           <hr className="h-0.5 w-full bg-black opacity-50 dark:bg-white" />
         </div>

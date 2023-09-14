@@ -53,7 +53,7 @@ export default function SignUpForm() {
       <input
         type="email"
         placeholder="Email"
-        className="mb-3 w-full rounded-lg bg-secondary px-5 py-4 text-lg focus:outline-none dark:bg-darkSecondary"
+        className="mb-3 w-full rounded-lg bg-secondary px-5 py-4 m550:text-base text-lg focus:outline-none dark:bg-darkSecondary"
         autoComplete="off"
         {...register('email', {
           required: 'This field is required',
@@ -77,7 +77,7 @@ export default function SignUpForm() {
       <input
         type="password"
         placeholder="Password"
-        className="my-3 w-full rounded-lg bg-secondary px-5 py-4 text-lg focus:outline-none dark:bg-darkSecondary"
+        className="my-3 w-full rounded-lg bg-secondary px-5 py-4 m550:text-base text-lg focus:outline-none dark:bg-darkSecondary"
         {...register('password', {
           required: 'This field is required',
           minLength: {
@@ -92,7 +92,7 @@ export default function SignUpForm() {
       <input
         type="password"
         placeholder="Repeat password"
-        className="my-3 w-full rounded-lg bg-secondary px-5 py-4 text-lg focus:outline-none dark:bg-darkSecondary"
+        className="my-3 w-full rounded-lg bg-secondary px-5 py-4 m550:text-base text-lg focus:outline-none dark:bg-darkSecondary"
         {...register('repeatPassword', {
           required: 'This field is required',
           validate: (value, formValues) =>
@@ -108,7 +108,7 @@ export default function SignUpForm() {
         {errors.repeatPassword?.message}
       </p>
 
-      <Button className="mt-3 w-full text-lg" type="submit" variant={'cta'}>
+      <Button className="mt-3 w-full text-lg m550:text-base" type="submit" variant={'cta'}>
         Sign in
       </Button>
 
