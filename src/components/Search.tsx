@@ -64,7 +64,7 @@ export default function Search() {
             resultsActive && searchQuery.trim().length >= 3
               ? 'visible opacity-100'
               : 'invisible opacity-0',
-            'scrollbar absolute left-0 top-[70px] z-10 max-h-[300px] w-full overflow-y-auto rounded-lg border border-black/30 bg-white p-[10px] transition-all dark:border-white/30 dark:bg-[#121212]',
+            'scrollbar absolute left-0 top-[70px] z-10 max-h-[300px] w-full overflow-y-auto overflow-x-hidden rounded-lg border border-black/30 bg-white p-[10px] transition-all dark:border-white/30 dark:bg-[#121212]',
           )}
         >
           {loading || error ? (

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import defaultpfp from '../../public/defaultprofilepicture.png'
-import { AiOutlineUser } from 'react-icons/ai'
+import { AiOutlinePlus, AiOutlineUser } from 'react-icons/ai'
 import { GoSignOut } from 'react-icons/go'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import { useRouter } from 'next/navigation'
@@ -28,15 +28,19 @@ export default function ProfileDropdown({
   return (
     <div className="absolute right-0 top-[68px] z-50 min-w-[200px] rounded-lg border border-black/50 bg-white dark:border-white/50 dark:bg-[#121212]">
       <div className="flex flex-col items-center border-0 border-b border-b-black/10 px-5 py-4 dark:border-b-white/10">
-        <Image
-          className="rounded-full border-2 border-black/30 dark:border-white/30"
-          width={40}
-          height={40}
-          src={profilePicture || defaultpfp.src}
-          alt="pfp"
-        />
+        <div className="relative h-10 w-10 overflow-hidden m500:h-8 m500:w-8">
+          <Image
+            className="rounded-full border-2 border-black/30 dark:border-white/30"
+            src={profilePicture || defaultpfp.src}
+            alt="pfp"
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
 
-        <h4 className="mt-2 text-lg font-medium">{username}</h4>
+        <h4 className="mt-2 overflow-hidden text-ellipsis whitespace-nowrap text-center text-lg font-medium m500:w-[12ch] m500:text-base">
+          {username}
+        </h4>
       </div>
       <div>
         <button
@@ -44,16 +48,26 @@ export default function ProfileDropdown({
             router.push(`/user/${username}`)
             setIsDropdownActive(false)
           }}
-          className="flex w-full items-center px-5 py-2 transition-colors hover:bg-whiteHover dark:hover:bg-blackHover"
+          className="flex w-full items-center px-5 py-2 transition-colors hover:bg-whiteHover dark:hover:bg-blackHover m500:text-sm"
         >
-          <AiOutlineUser className="mr-3 h-5 w-5" />
+          <AiOutlineUser className="mr-3 h-5 w-5 m500:h-4 m500:w-4" />
           My profile
         </button>
         <button
-          className="flex w-full items-center rounded-b-lg px-5 py-2 transition-colors hover:bg-whiteHover dark:hover:bg-blackHover"
+          onClick={() => {
+            router.push('/new-bookshelf')
+            setIsDropdownActive(false)
+          }}
+          className="hidden w-full items-center px-5 py-2 transition-colors hover:bg-whiteHover dark:hover:bg-blackHover m1000:flex m500:text-sm"
+        >
+          <AiOutlinePlus className="mr-3 h-5 w-5 fill-white m500:h-4 m500:w-4" />
+          New bookshelf
+        </button>
+        <button
+          className="flex w-full items-center rounded-b-lg px-5 py-2 transition-colors hover:bg-whiteHover dark:hover:bg-blackHover m500:text-sm"
           onClick={signOut}
         >
-          <GoSignOut className="mr-3 h-5 w-5" />
+          <GoSignOut className="mr-3 h-5 w-5 m500:h-4 m500:w-4" />
           Sign out
         </button>
       </div>
