@@ -1,11 +1,13 @@
 export default function PrivacyPolicy() {
   return (
-    <div className="mx-auto h-full w-[900px] px-containerDesktop py-10">
-      <h2 className="text-center text-3xl font-bold">Privacy policy</h2>
+    <div className="mx-auto h-full w-full max-w-[900px] px-containerDesktop py-10">
+      <h2 className="text-center text-3xl font-bold m500:text-xl">
+        Privacy policy
+      </h2>
 
-      <ol className="my-10 list-inside list-decimal leading-relaxed">
+      <ol className="my-10 list-inside list-decimal leading-relaxed m500:text-sm">
         <li>
-          <span className="mb-8 inline-block text-xl font-medium">
+          <span className="mb-8 inline-block text-xl font-medium m500:mb-6 m500:text-lg">
             Information Collection
           </span>{' '}
           <br /> We collect and store the following user information from
@@ -17,7 +19,7 @@ export default function PrivacyPolicy() {
           </ul>
         </li>
         <li>
-          <span className="my-8 inline-block text-xl font-medium">
+          <span className="my-8 inline-block text-xl font-medium m500:mb-6 m500:text-lg">
             Use of information
           </span>{' '}
           <br />
@@ -25,7 +27,7 @@ export default function PrivacyPolicy() {
           including user account management and communication.
         </li>
         <li>
-          <span className="my-8 inline-block text-xl font-medium">
+          <span className="my-8 inline-block text-xl font-medium m500:mb-6 m500:text-lg">
             Data Security
           </span>{' '}
           <br />
@@ -34,7 +36,7 @@ export default function PrivacyPolicy() {
           secure. We cannot guarantee the absolute security of your data.
         </li>
         <li>
-          <span className="my-8 inline-block text-xl font-medium">
+          <span className="my-8 inline-block text-xl font-medium m500:mb-6 m500:text-lg">
             Data Sharing
           </span>{' '}
           <br />
@@ -43,7 +45,7 @@ export default function PrivacyPolicy() {
           App.
         </li>
         <li>
-          <span className="my-8 inline-block text-xl font-medium">
+          <span className="my-8 inline-block text-xl font-medium m500:mb-6 m500:text-lg">
             Contact Information
           </span>{' '}
           <br />
