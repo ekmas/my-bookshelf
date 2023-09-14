@@ -19,13 +19,13 @@ export default function Subjects({
 }: Props) {
   return (
     <div>
-      <h2 className="text-center text-xl font-bold">
+      <h2 className="text-center text-xl font-bold m400:text-lg">
         Choose subjects you're into
       </h2>
 
       <p className="my-6">Choose at least 5 subjects</p>
 
-      <div className="scrollbar max-h-[300px] overflow-y-auto">
+      <div className="scrollbar h-[30dvh] max-h-[300px] overflow-y-auto">
         {subjects.map((category) => {
           return (
             <SubjectsAccordion

@@ -26,10 +26,12 @@ export default function SubjectsAccordion({ category, children }: Props) {
           setShowContent(!showContent)
         }}
       >
-        {category}
+        <p className="flex-shrink-1 overflow-hidden text-ellipsis whitespace-nowrap m400:text-sm">
+          {category}
+        </p>
         <BsChevronDown
           style={{ transform: `rotate(${showContent ? '180deg' : '0'})` }}
-          className="ml-4 min-h-[20px] min-w-[20px] transition-transform ease-in-out"
+          className="ml-4 min-h-[20px] min-w-[20px] flex-shrink-0 transition-transform ease-in-out m400:min-h-[13px] m400:min-w-[13px]"
         />
       </button>
       <div

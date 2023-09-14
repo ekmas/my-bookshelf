@@ -30,7 +30,7 @@ export default async function CarouselWrapper({
     return null
   } else {
     return (
-      <div className="my-10 rounded-lg bg-secondary dark:bg-darkSecondary">
+      <div className="my-10 rounded-lg bg-secondary dark:bg-darkSecondary m700:my-5">
         <Carousel
           subjectName={subjectName}
           isRecommended={isRecommended}

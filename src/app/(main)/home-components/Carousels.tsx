@@ -40,7 +40,7 @@ export default function Carousels({ subjects, notInterestedSubjects }: Props) {
   }
 
   return (
-    <div className="mx-auto w-container px-containerDesktop">
+    <div className="mx-auto w-full max-w-container px-containerDesktop m400:px-containerMobile">
       {isLoggedIn ? (
         <>
           {subjects.map((item) => {

@@ -15,7 +15,7 @@ const Book = forwardRef(
 
     return (
       <div
-        className="mx-5 flex flex-col items-center justify-center rounded-lg py-8 transition-colors hover:bg-secondaryHover dark:hover:bg-darkSecondaryHover"
+        className="mx-5 flex flex-col items-center justify-center rounded-lg py-8 transition-colors hover:bg-secondaryHover dark:hover:bg-darkSecondaryHover m400:mx-10 m400:py-5"
         ref={ref}
       >
         <Link
