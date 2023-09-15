@@ -100,14 +100,14 @@ export default function EditBookshelfMain({
   }
 
   return (
-    <div className="mx-auto mt-8 flex w-[600px] justify-center">
+    <div className="mx-auto mt-8 flex w-full max-w-[600px] justify-center">
       <form
         className="flex w-full flex-col items-center"
         onSubmit={handleSubmit(onSubmit)}
       >
         <input
           type="text"
-          className="mb-6 w-[30ch] rounded-lg bg-secondary px-5 py-4 focus:outline-none dark:bg-darkSecondary"
+          className="mb-6 w-[30ch] rounded-lg bg-secondary px-5 py-4 focus:outline-none dark:bg-darkSecondary m500:text-sm"
           placeholder="Bookshelf name"
           autoComplete="off"
           {...register('bookshelfName', {

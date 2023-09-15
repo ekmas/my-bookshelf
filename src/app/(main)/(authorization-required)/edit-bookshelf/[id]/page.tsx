@@ -33,8 +33,10 @@ export default async function EditBookshelf({
   if (booksError) throw new Error(booksError.message)
 
   return (
-    <div className="mx-auto h-full w-container px-containerDesktop py-10">
-      <h2 className="text-center text-3xl font-bold">Edit bookshelf</h2>
+    <div className="mx-auto h-full w-full max-w-container px-containerDesktop py-10 m400:px-containerMobile">
+      <h2 className="text-center text-3xl font-bold m500:text-xl">
+        Edit bookshelf
+      </h2>
 
       <EditBookshelfMain
         currentBookshelfName={bookshelf?.at(0)?.name}
