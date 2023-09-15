@@ -24,7 +24,7 @@ export default function Navbar({ user, isFirstLogin, userData }: Props) {
   const [isDropdownActive, setIsDropdownActive] = useState(false)
 
   return (
-    <nav className="fixed left-0 top-0 z-30 w-full bg-white dark:bg-[#121212]">
+    <nav className="fixed left-0 top-0 z-30 w-full bg-white dark:bg-[#121212] m500:h-[88px]">
       <div className="mx-auto flex w-full max-w-container items-center justify-between px-containerDesktop py-5 m400:px-containerMobile">
         <div className="flex w-[280px] items-center m700:mr-5 m700:max-w-[65px] m700:flex-shrink-0">
           <Button
