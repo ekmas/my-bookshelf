@@ -6,7 +6,7 @@ import { Arrow } from '@egjs/flicking-plugins'
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 import Button from '@/components/Button'
 import Book from './Book'
-import { useState, useEffect } from 'react'
+import { useState, useLayoutEffect } from 'react'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import Link from 'next/link'
 import useWindowWidth from '@/hooks/useWindowWidth'
@@ -21,7 +21,7 @@ type Props = {
 export default function Carousel({ data, isRecommended, subjectName }: Props) {
   const windowWidth = useWindowWidth()
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (windowWidth > 800) {
       setPanelsCount(4)
     } else if (windowWidth > 700) {
