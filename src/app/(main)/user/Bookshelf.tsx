@@ -13,13 +13,17 @@ export default function Bookshelf({ bookshelf, isThisMyBookshelf }: Props) {
 
   return (
     <div className="flex flex-col justify-between rounded-lg bg-secondary transition-colors hover:bg-secondaryHover dark:bg-darkSecondary dark:hover:bg-darkSecondaryHover">
-      <Link href={`/bookshelf/${bookshelf.id}`} className="font-medium p-5">
+      <Link
+        href={`/bookshelf/${bookshelf.id}`}
+        className="overflow-hidden text-ellipsis whitespace-nowrap p-5 font-medium m800:text-sm"
+      >
         {bookshelf.name}
       </Link>
 
       {isThisMyBookshelf && (
         <div className="mt-5 grid grid-cols-2 gap-2 px-5 pb-5">
           <Button
+            className="overflow-hidden text-ellipsis whitespace-nowrap"
             href={`/edit-bookshelf/${bookshelf.id}`}
             size={'sm'}
             variant={'cta'}

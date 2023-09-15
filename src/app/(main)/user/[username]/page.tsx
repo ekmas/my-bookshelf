@@ -36,7 +36,7 @@ export default async function UserPage({
   const isThisMyBookshelf = userData?.at(0).id === user_id
 
   return (
-    <div className="mx-auto h-full w-[900px] px-containerDesktop py-10">
+    <div className="mx-auto h-full w-full max-w-[900px] px-containerDesktop py-10 m400:px-containerMobile">
       <User
         username={params.username}
         profilePicture={userData?.at(0)?.profilePictureUrl}

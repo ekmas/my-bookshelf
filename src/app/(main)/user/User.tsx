@@ -23,10 +23,14 @@ export default function User({
         alt="pfp"
       />
 
-      <h2 className="mt-5 text-3xl font-medium">{username}</h2>
+      <h2 className="mt-5 text-3xl font-medium m800:text-2xl">{username}</h2>
 
       {isThisMyBookshelf && (
-        <Button href="/edit-profile" className="mt-5" variant={'cta'}>
+        <Button
+          href="/edit-profile"
+          className="mt-5 m800:text-sm"
+          variant={'cta'}
+        >
           Edit profile
         </Button>
       )}
