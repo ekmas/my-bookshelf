@@ -24,6 +24,7 @@ export default function SignInProviders() {
         onClick={() => {
           signIn('google')
         }}
+        disabled
         className="py-4 m550:py-3"
         variant={'cta'}
       >
