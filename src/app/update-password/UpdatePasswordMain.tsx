@@ -41,7 +41,7 @@ export default function UpdatePasswordMain() {
         <div className="flex flex-col items-center justify-center">
           <input
             type="password"
-            className="my-8 w-[30ch] rounded-lg bg-secondary p-2.5 text-center focus:outline-none dark:bg-darkSecondary"
+            className="my-8 w-[30ch] rounded-lg bg-secondary p-2.5 text-center focus:outline-none dark:bg-darkSecondary m450:w-[25ch] m450:text-sm m350:w-[20ch]"
             autoComplete="off"
             {...register('password', {
               required: 'This field is required',
@@ -52,7 +52,7 @@ export default function UpdatePasswordMain() {
             })}
           />
 
-          <p className="mb-4 mt-[-16px] text-sm opacity-80">
+          <p className="mb-4 mt-[-16px] text-center text-sm opacity-80">
             {errors.password?.message}
           </p>
 

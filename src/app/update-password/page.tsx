@@ -14,7 +14,7 @@ export default async function UpdatePassword() {
   }
 
   return (
-    <main className="mx-auto flex h-[calc(100dvh-128px)] w-container items-center justify-center px-containerDesktop py-10">
+    <main className="mx-auto flex h-[calc(100dvh-128px)] w-full max-w-container items-center justify-center px-containerDesktop py-10 m600:h-[calc(100dvh-152px)] m500:h-[100dvh] m400:px-containerMobile">
       <UpdatePasswordMain />
     </main>
   )
