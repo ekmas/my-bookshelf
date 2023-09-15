@@ -27,8 +27,8 @@ export default function BookshelfInfo({
   const { id } = useParams()
 
   return (
-    <aside className="fixed top-[108px] h-[calc(100dvh-108px-128px-40px)] max-h-[calc(100dvh-108px-128px-40px)] w-[350px] rounded-lg bg-secondary p-5 dark:bg-darkSecondary">
-      <h2 className="text-2xl font-bold">{title}</h2>
+    <aside className="fixed top-[108px] h-[calc(100dvh-108px-128px-40px)] max-h-[calc(100dvh-108px-128px-40px)] w-[350px] rounded-lg bg-secondary p-5 dark:bg-darkSecondary m1000:w-[250px] m800:relative m800:top-0 m800:block m800:h-auto m800:max-h-none m800:w-full">
+      <h2 className="text-2xl font-bold m800:text-xl">{title}</h2>
 
       <Link
         href={`/user/${user.name}`}
@@ -54,7 +54,7 @@ export default function BookshelfInfo({
           )}
         </div>
 
-        <h4 className="w-[90%] overflow-hidden text-ellipsis whitespace-nowrap font-medium">
+        <h4 className="w-[90%] overflow-hidden text-ellipsis whitespace-nowrap font-medium m400:text-sm">
           {user.name}
         </h4>
       </Link>
@@ -63,7 +63,7 @@ export default function BookshelfInfo({
         onClick={() => {
           setIsShareModalActive(true)
         }}
-        className="w-full"
+        className="w-full m400:text-xs"
         size={'sm'}
         variant={'cta'}
       >
@@ -79,7 +79,7 @@ export default function BookshelfInfo({
           <div className="mt-4 grid grid-cols-2 gap-4">
             <Button
               href={`/edit-bookshelf/${id}`}
-              className="w-full border border-black/10 dark:border-white/10"
+              className="w-full border border-black/10 dark:border-white/10 m400:text-xs"
               size={'sm'}
             >
               Edit
@@ -88,7 +88,7 @@ export default function BookshelfInfo({
               onClick={() => {
                 setIsDeleteModalActive(true)
               }}
-              className="w-full border border-black/10 dark:border-white/10"
+              className="w-full border border-black/10 dark:border-white/10 m400:text-xs"
               size={'sm'}
             >
               Delete

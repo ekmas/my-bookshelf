@@ -49,13 +49,13 @@ export default async function Bookshelf({
   }
 
   return (
-    <div className="mx-auto h-full w-container px-containerDesktop">
+    <div className="mx-auto h-full w-full max-w-container px-containerDesktop m400:px-containerMobile">
       <BookshelfInfo
         title={bookshelf?.at(0)?.name}
         user={user}
         isThisMyBookshelf={isThisMyBookshelf}
       />
-      <div className="ml-[370px] mt-5 w-[calc(100%-350px)]">
+      <div className="ml-[370px] mt-5 w-[calc(100%-350px)] m1000:ml-[270px] m1000:w-[calc(100%-250px)] m800:ml-0 m800:w-full">
         {books.length ? (
           <>
             {books.map((book, index) => {
@@ -63,7 +63,7 @@ export default async function Bookshelf({
             })}
           </>
         ) : (
-          <div className="flex h-[calc(100dvh-108px-128px)] items-center justify-center">
+          <div className="flex h-[calc(100dvh-108px-128px)] items-center justify-center text-center m800:h-[200px] m500:text-sm">
             This bookshelf does not have any books yet.
           </div>
         )}

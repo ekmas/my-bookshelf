@@ -15,10 +15,10 @@ export default function Book({
   place: number
 }) {
   return (
-    <div className="mb-[5px] flex items-center rounded-lg p-[10px] px-5 outline outline-1 outline-black/10 transition-colors hover:bg-whiteHover dark:outline-white/10 dark:hover:bg-blackHover">
+    <div className="mb-[5px] flex items-center rounded-lg p-[10px] px-5 outline outline-1 outline-black/10 transition-colors hover:bg-whiteHover dark:outline-white/10 dark:hover:bg-blackHover m900:text-sm m500:text-xs">
       <p className="w-[3ch]">{place}</p>
 
-      <div className="flex w-[150px] items-center justify-center">
+      <div className="flex w-[150px] items-center justify-center m400:hidden">
         {book?.cover_id ? (
           <Image
             alt="book cover"
