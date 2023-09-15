@@ -14,7 +14,7 @@ export default function Bookshelves({
   selectedBookshelf,
 }: Props) {
   return (
-    <div className="scrollbar mt-6 max-h-[150px] w-[250px] overflow-auto border border-black/30 dark:border-white/30">
+    <div className="scrollbar mt-6 max-h-[150px] w-[250px] overflow-auto border border-black/30 dark:border-white/30 m400:w-[200px]">
       {bookshelves.map((item, index) => {
         return (
           <button

@@ -74,25 +74,27 @@ export default async function Book({ params }: { params: { id: string } }) {
   // because there is a lot of undocumented subjects in open library
 
   return (
-    <div className="mx-auto h-full w-container px-containerDesktop py-10">
-      <div className="grid h-min w-full grid-cols-[1fr_2fr] gap-10">
-        <div className="flex justify-center rounded-lg border border-black/10 py-5 dark:border-white/10">
+    <div className="mx-auto h-full w-full max-w-container px-containerDesktop py-10 m400:px-containerMobile">
+      <div className="grid h-min w-full grid-cols-[1fr_2fr] gap-10 m700:gap-5 m650:grid-cols-1">
+        <div className="flex h-[400px] justify-center rounded-lg border border-black/10 py-5 dark:border-white/10 m1000:h-[300px] m500:h-[200px]">
           {bookData?.covers?.at(0) ? (
             <BookCover bookId={bookData.covers.at(0)} />
           ) : (
-            <div className="flex h-[400px] w-[260px] items-center justify-center text-black dark:text-white">
+            <div className="flex h-[358px] w-[215px] items-center justify-center text-black dark:text-white m1000:h-full">
               <p>no cover</p>
             </div>
           )}
         </div>
 
         <div>
-          <h1 className="text-4xl font-bold">{bookData?.title}</h1>
+          <h1 className="text-4xl font-bold m900:text-2xl m500:text-xl">
+            {bookData?.title}
+          </h1>
 
           {authorId ? (
             <Link
               title={author?.name}
-              className="mt-4 inline-block w-max text-xl transition-none hover:underline"
+              className="mt-4 inline-block w-max text-xl transition-none hover:underline m900:text-lg"
               href={authorId}
             >
               {authorName || 'Author'}
@@ -128,8 +130,10 @@ export default async function Book({ params }: { params: { id: string } }) {
       </div>
       {typeof bookData?.description === 'string' && (
         <div className="mt-8">
-          <h4 className="mb-3 text-2xl font-bold">Description</h4>
-          <div className="text-lg">{bookData.description}</div>
+          <h4 className="mb-3 text-2xl font-bold m900:text-lg">Description</h4>
+          <div className="break-all text-lg m900:text-base">
+            {bookData.description}
+          </div>
         </div>
       )}
     </div>

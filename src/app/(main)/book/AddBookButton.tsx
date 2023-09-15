@@ -10,7 +10,11 @@ export default function AddBookButton({ bookInfo }: { bookInfo: any }) {
 
   return (
     <>
-      <Button onClick={() => setIsModalActive(true)} variant={'cta'}>
+      <Button
+        className="m400:text-sm"
+        onClick={() => setIsModalActive(true)}
+        variant={'cta'}
+      >
         Add to bookshelf
       </Button>
 
