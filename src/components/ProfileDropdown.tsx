@@ -28,13 +28,13 @@ export default function ProfileDropdown({
   return (
     <div className="absolute right-0 top-[68px] z-50 min-w-[200px] rounded-lg border border-black/50 bg-white dark:border-white/50 dark:bg-[#121212]">
       <div className="flex flex-col items-center border-0 border-b border-b-black/10 px-5 py-4 dark:border-b-white/10">
-        <div className="relative h-10 w-10 overflow-hidden m500:h-8 m500:w-8">
+        <div className="relative aspect-square h-10 max-w-[40px] overflow-hidden m500:h-8 m500:w-8 m500:max-w-[32px]">
           <Image
             className="rounded-full border-2 border-black/30 dark:border-white/30"
             src={profilePicture || defaultpfp.src}
+            sizes='sizes="(max-width: 500px) 32px, 40px"'
             alt="pfp"
-            layout="fill"
-            objectFit="cover"
+            fill
           />
         </div>
 

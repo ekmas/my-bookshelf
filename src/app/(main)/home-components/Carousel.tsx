@@ -32,7 +32,7 @@ export default function Carousel({ data, isRecommended, subjectName }: Props) {
   }, [windowWidth])
 
   const [isHidden, setIsHidden] = useState(false)
-  const [panelsCount, setPanelsCount] = useState(3)
+  const [panelsCount, setPanelsCount] = useState(4)
 
   const supabase = createClientComponentClient()
 

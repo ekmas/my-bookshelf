@@ -26,12 +26,19 @@ export default function Navbar({ user, isFirstLogin, userData }: Props) {
   return (
     <nav className="fixed left-0 top-0 z-30 w-full bg-white dark:bg-[#121212]">
       <div className="mx-auto flex w-full max-w-container items-center justify-between px-containerDesktop py-5 m400:px-containerMobile">
-        <div className="w-[280px] m700:mr-5 m700:w-auto m700:flex-shrink-0">
-          <div className="relative h-[50px] w-[65px] overflow-hidden m500:h-[42px] m500:w-[55px]">
-            <Button variant={'link'} href={'/'}>
-              <Image src={logo} alt="logo" layout="fill" objectFit="cover" />
-            </Button>
-          </div>
+        <div className="flex w-[280px] items-center m700:mr-5 m700:max-w-[65px] m700:flex-shrink-0">
+          <Button
+            className="relative aspect-[1.32/1] w-full max-w-[65px] m500:max-w-[55px]"
+            variant={'link'}
+            href={'/'}
+          >
+            <Image
+              src={logo}
+              alt="logo"
+              fill
+              sizes="(max-width: 500px) 55px, 65px"
+            />
+          </Button>
         </div>
 
         <div className="w-[400px] m700:w-auto m500:hidden">
