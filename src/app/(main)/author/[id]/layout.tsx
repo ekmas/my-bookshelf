@@ -22,19 +22,21 @@ export default async function AuthorPageLayout({
   const data = await res.json()
 
   return (
-    <div className="mx-auto h-full w-container px-containerDesktop py-10">
-      <div className="grid h-min w-full grid-cols-[1fr_2fr] gap-10">
-        <div className="flex justify-center rounded-lg border border-black/10 py-5 dark:border-white/10">
+    <div className="mx-auto h-full w-full max-w-container px-containerDesktop py-10 m400:px-containerMobile">
+      <div className="grid h-min w-full grid-cols-[1fr_2fr] gap-10 m700:gap-5 m650:grid-cols-1">
+        <div className="flex h-[250px] justify-center rounded-lg border border-black/10 py-5 dark:border-white/10">
           {data?.photos?.at(0) ? (
             <AuthorImage imageId={data?.photos?.at(0)} />
           ) : (
-            <div className="flex h-[400px] w-[260px] items-center justify-center text-black dark:text-white">
+            <div className="flex h-[208px] w-[208px] items-center justify-center text-black dark:text-white">
               <p>no image</p>
             </div>
           )}
         </div>
         <div>
-          <h1 className="text-4xl font-bold">{data?.name}</h1>
+          <h1 className="text-4xl font-bold m900:text-2xl m500:text-xl">
+            {data?.name}
+          </h1>
 
           {data?.birth_date && (
             <div className="mt-4">
@@ -45,8 +47,10 @@ export default async function AuthorPageLayout({
       </div>
       {data?.bio && (
         <div className="mt-8">
-          <h4 className="mb-5 text-2xl font-bold">Bio</h4>
-          <div className="text-lg">{data?.bio?.value || data?.bio}</div>
+          <h4 className="mb-5 text-2xl font-bold m900:text-lg">Bio</h4>
+          <div className="break-all text-lg m900:text-base">
+            {data?.bio?.value || data?.bio}
+          </div>
         </div>
       )}
       {children}

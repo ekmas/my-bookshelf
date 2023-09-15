@@ -29,10 +29,10 @@ export default async function Author({
   return (
     <>
       <div className="mt-8">
-        <h4 className="mb-5 text-2xl font-bold">Books</h4>
+        <h4 className="mb-5 text-2xl font-bold m900:text-lg">Books</h4>
 
         {authorBooks.entries.length > 0 ? (
-          <div className="grid grid-cols-4 gap-5 py-6">
+          <div className="grid grid-cols-4 gap-5 py-6 m1000:grid-cols-3 m800:grid-cols-2 m800:py-4 m600:grid-cols-1">
             {authorBooks.entries.map((book: any, index: number) => {
               return <Book key={index} book={book} />
             })}
