@@ -6,7 +6,7 @@ import loadinggif from '@/../public/loadinggif.gif'
 import Image from 'next/image'
 import useDebounce from '@/hooks/useDebounce'
 import Book from './Book'
-import { AiOutlineSearch } from 'react-icons/ai'
+import { AiOutlinePlus, AiOutlineSearch } from 'react-icons/ai'
 import { IoMdClose } from 'react-icons/io'
 import Button from '@/components/Button'
 
@@ -60,7 +60,7 @@ export default function AddBooks({ books, setBooks }: Props) {
               setResultsActive(false)
             }}
             type="text"
-            className="w-full rounded-lg bg-secondary px-5 py-4 focus:outline-none dark:bg-darkSecondary"
+            className="w-full rounded-lg bg-secondary px-5 py-4 focus:outline-none dark:bg-darkSecondary m500:text-sm"
             placeholder="Search for books"
             autoComplete="off"
           />
@@ -85,7 +85,7 @@ export default function AddBooks({ books, setBooks }: Props) {
                     src={loadinggif.src}
                   />
                 ) : (
-                  <p className="py-2 text-center">
+                  <p className="py-2 text-center m500:text-sm">
                     An error has occured, please try again.
                   </p>
                 )}
@@ -105,22 +105,26 @@ export default function AddBooks({ books, setBooks }: Props) {
                           size={'sm'}
                           variant={'cta'}
                           type="button"
+                          className="m400:px-2 m400:py-2"
                         >
-                          Add
+                          <span className="m400:hidden">Add</span>
+                          <AiOutlinePlus className="hidden h-4 w-4 m400:inline" />
                         </Button>
                       </Book>
                     )
                   })}
                 </>
               ) : (
-                <div className="py-2 text-center">0 results found</div>
+                <div className="py-2 text-center m500:text-sm">
+                  0 results found
+                </div>
               )}
             </>
           )}
         </div>
       </div>
 
-      <div className="scrollbar h-[300px] w-full overflow-y-auto rounded-lg border border-black/30 p-[10px] dark:border-white/30">
+      <div className="scrollbar h-[300px] w-full overflow-y-auto overflow-x-hidden rounded-lg border border-black/30 p-[10px] dark:border-white/30">
         {books.length ? (
           <div className="w-full">
             {books.map((book, index) => {
@@ -143,7 +147,7 @@ export default function AddBooks({ books, setBooks }: Props) {
             })}
           </div>
         ) : (
-          <div className="flex h-full w-full items-center justify-center p-5 text-center">
+          <div className="flex h-full w-full items-center justify-center p-5 text-center m500:text-sm">
             Search for books and when you add them, they will appear here.
           </div>
         )}
