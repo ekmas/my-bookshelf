@@ -23,7 +23,9 @@ export default function User({
         alt="pfp"
       />
 
-      <h2 className="mt-5 text-3xl font-medium m800:text-2xl">{username}</h2>
+      <h2 className="mt-5 text-3xl font-medium m800:text-2xl m400:text-xl">
+        {username}
+      </h2>
 
       {isThisMyBookshelf && (
         <Button

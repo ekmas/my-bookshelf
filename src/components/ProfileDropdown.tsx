@@ -60,7 +60,7 @@ export default function ProfileDropdown({
           }}
           className="hidden w-full items-center px-5 py-2 transition-colors hover:bg-whiteHover dark:hover:bg-blackHover m1000:flex m500:text-sm"
         >
-          <AiOutlinePlus className="mr-3 h-5 w-5 fill-white m500:h-4 m500:w-4" />
+          <AiOutlinePlus className="mr-3 h-5 w-5 m500:h-4 m500:w-4" />
           New bookshelf
         </button>
         <button
