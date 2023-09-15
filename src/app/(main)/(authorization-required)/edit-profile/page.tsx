@@ -1,5 +1,10 @@
 import EditProfileMain from './EditProfileMain'
 import createServerComponentClient from '@/lib/supabase-server'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Edit profile',
+}
 
 export default async function EditProfile() {
   const supabase = createServerComponentClient()

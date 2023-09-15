@@ -1,6 +1,11 @@
 import createServerComponentClient from '@/lib/supabase-server'
 import { redirect } from 'next/navigation'
 import UpdatePasswordMain from './UpdatePasswordMain'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Update password',
+}
 
 export default async function UpdatePassword() {
   const supabase = createServerComponentClient()

@@ -1,6 +1,11 @@
 import createServerComponentClient from '@/lib/supabase-server'
 import User from '../User'
 import Bookshelves from '../Bookshelves'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'User',
+}
 
 export default async function UserPage({
   params,

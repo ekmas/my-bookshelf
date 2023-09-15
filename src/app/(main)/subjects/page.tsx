@@ -1,5 +1,10 @@
 import subjects from '@/data/subjects.json'
 import Subject from './Subject'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Subjects',
+}
 
 export default function Subjects() {
   return (

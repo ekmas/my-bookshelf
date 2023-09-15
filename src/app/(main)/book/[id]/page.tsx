@@ -3,6 +3,11 @@ import allSubjects from '@/data/subjects.json'
 import BookCover from '../BookCover'
 import AddBookButton from '../AddBookButton'
 import createServerComponentClient from '@/lib/supabase-server'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Book',
+}
 
 export default async function Book({ params }: { params: { id: string } }) {
   const supabase = createServerComponentClient()

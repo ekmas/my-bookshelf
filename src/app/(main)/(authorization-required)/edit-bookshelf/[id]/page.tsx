@@ -1,6 +1,11 @@
 import createServerComponentClient from '@/lib/supabase-server'
 import { redirect } from 'next/navigation'
 import EditBookshelfMain from '../EditBookshelfMain'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Edit bookshelf',
+}
 
 export default async function EditBookshelf({
   params,

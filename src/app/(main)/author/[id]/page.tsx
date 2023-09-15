@@ -1,5 +1,10 @@
 import Book from '../Book'
 import Pagination from '@/components/Pagination'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Author',
+}
 
 export default async function Author({
   params,

@@ -1,6 +1,11 @@
 import createServerComponentClient from '@/lib/supabase-server'
 import IntroductionModal from './home-components/IntroductionModal'
 import Carousels from './home-components/Carousels'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Home',
+}
 
 export default async function Home() {
   const supabase = createServerComponentClient()

@@ -1,4 +1,9 @@
 import NewBookshelfMain from './NewBookshelfMain'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'New bookshelf',
+}
 
 export default async function NewBookshelf() {
   return (
