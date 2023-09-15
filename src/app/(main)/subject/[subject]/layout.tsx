@@ -50,8 +50,10 @@ export default async function SubjectPageLayout({
     params.subject[0].toUpperCase() + params.subject.slice(1)
 
   return (
-    <div className="mx-auto h-full w-container px-containerDesktop py-10">
-      <h1 className="text-4xl font-bold">{subjectHeading}</h1>
+    <div className="mx-auto h-full w-full max-w-container px-containerDesktop py-10 m400:px-containerMobile">
+      <h1 className="text-4xl font-bold m900:text-2xl m500:text-xl">
+        {subjectHeading}
+      </h1>
       {userId && (
         <SubjectButtons
           subject={decodeURI(params.subject)}

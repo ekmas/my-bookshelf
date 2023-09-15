@@ -15,7 +15,7 @@ const Book = forwardRef(
 
     return (
       <div
-        className="flex flex-col items-center justify-center rounded-lg py-8 transition-colors hover:bg-secondaryHover dark:hover:bg-darkSecondaryHover"
+        className="flex flex-col items-center justify-center rounded-lg py-8 transition-colors hover:bg-whiteHover dark:hover:bg-blackHover"
         ref={ref}
       >
         <Link
@@ -56,7 +56,7 @@ const Book = forwardRef(
 
           <h2
             title={book.title}
-            className="mt-3 w-[90%] overflow-hidden text-ellipsis whitespace-nowrap text-center font-medium"
+            className="mt-3 w-[90%] overflow-hidden text-ellipsis whitespace-nowrap text-center font-medium m400:text-sm"
           >
             {book.title}
           </h2>
@@ -65,7 +65,7 @@ const Book = forwardRef(
         {author && (
           <Link
             title={author.name}
-            className="mt-1.5 w-[90%] overflow-hidden text-ellipsis whitespace-nowrap text-center opacity-90 transition-none hover:underline"
+            className="mt-1.5 w-[90%] overflow-hidden text-ellipsis whitespace-nowrap text-center opacity-90 transition-none hover:underline m400:text-sm"
             href={authorId}
           >
             {author.name}

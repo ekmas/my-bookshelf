@@ -90,7 +90,7 @@ export default function SubjectButtons({
 
   return (
     <div className="mt-8">
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-6 m600:text-sm m400:flex-col m400:items-start">
         {!isFavorite && !isMuted ? (
           <>
             <Button onClick={favoriteSubject} variant={'cta'}>
