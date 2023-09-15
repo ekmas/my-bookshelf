@@ -57,10 +57,10 @@ export default function ProfilePicture({
     <div className="flex flex-col items-center justify-center py-5">
       <div
         style={{ backgroundImage: `url(${pfp})` }}
-        className="h-[150px] w-[150px] rounded-full bg-cover bg-center bg-no-repeat"
+        className="h-[150px] w-[150px] rounded-full bg-cover bg-center bg-no-repeat m600:h-[100px] m600:w-[100px]"
       ></div>
 
-      <p className="mt-2 text-sm opacity-80">
+      <p className="mt-2 text-center text-sm opacity-80 m600:text-xs">
         Please choose an image that has same width and height and is below 2MB
       </p>
 
@@ -72,7 +72,7 @@ export default function ProfilePicture({
         onChange={onImageUpload}
       />
 
-      <div className="mt-5 flex items-center">
+      <div className="mt-5 flex items-center m600:text-sm">
         <label
           className="mr-3 cursor-pointer rounded-lg bg-primary px-6 py-3 text-white transition-colors hover:bg-primaryHover"
           htmlFor="profile-picture"

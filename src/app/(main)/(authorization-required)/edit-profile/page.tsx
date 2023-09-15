@@ -14,8 +14,10 @@ export default async function EditProfile() {
   }
 
   return (
-    <div className="mx-auto h-full w-container px-containerDesktop py-10">
-      <h2 className="text-center text-3xl font-bold">Edit profile</h2>
+    <div className="mx-auto h-full w-full max-w-container px-containerDesktop py-10 m400:px-containerMobile">
+      <h2 className="text-center text-3xl font-bold m800:text-2xl">
+        Edit profile
+      </h2>
 
       <EditProfileMain
         currentUsername={data?.at(0).username}

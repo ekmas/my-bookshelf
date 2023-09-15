@@ -60,7 +60,7 @@ export default function EditProfileMain({
   }
 
   return (
-    <div className="mx-auto mt-8 flex w-[600px] flex-col items-center justify-center">
+    <div className="mx-auto mt-8 flex w-full max-w-[600px] flex-col items-center justify-center m600:mt-5">
       <ProfilePicture
         currentprofilePictureUrl={currentprofilePictureUrl}
         setProfilePictureUrl={setProfilePictureUrl}
@@ -73,7 +73,7 @@ export default function EditProfileMain({
       >
         <input
           type="text"
-          className="mb-6 mt-5 w-[30ch] rounded-lg bg-secondary px-5 py-4 focus:outline-none dark:bg-darkSecondary"
+          className="mb-6 mt-5 w-[30ch] rounded-lg bg-secondary px-5 py-4 focus:outline-none dark:bg-darkSecondary m600:mb-4 m600:mt-3 m600:text-sm"
           placeholder="Username"
           autoComplete="off"
           {...register('username', {
@@ -91,28 +91,34 @@ export default function EditProfileMain({
               message: 'Only letters and numbers are allowed.',
             },
             validate: async (value) => {
-              const { data, error } = await supabase
-                .from('users')
-                .select()
-                .eq('username', value)
+              if (value !== currentUsername) {
+                const { data, error } = await supabase
+                  .from('users')
+                  .select()
+                  .eq('username', value)
 
-              if (error) {
-                setError('username', {
-                  type: 'custom-error',
-                  message: error.message,
-                })
+                if (error) {
+                  setError('username', {
+                    type: 'custom-error',
+                    message: error.message,
+                  })
+                }
+
+                return data?.length === 0 || 'This username is already in use'
               }
-
-              return data?.length === 0 || 'This username is already in use'
             },
           })}
         />
 
-        <p className="mb-4 mt-[-16px] text-sm opacity-80">
+        <p className="mb-4 mt-[-16px] text-center text-sm opacity-80 m600:mt-[-12px]">
           {errors.username?.message}
         </p>
 
-        <Button type="submit" className="mt-5 w-max" variant={'cta'}>
+        <Button
+          type="submit"
+          className="mt-5 w-max m600:text-sm"
+          variant={'cta'}
+        >
           Update
         </Button>
       </form>
