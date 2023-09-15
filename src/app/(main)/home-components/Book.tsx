@@ -4,6 +4,7 @@ import React, { useState, forwardRef, Ref } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import placeholder from '@/../public/bookplaceholder.jpg'
+import clsx from 'clsx'
 
 const Book = forwardRef(
   ({ book }: any, ref: Ref<HTMLDivElement>): JSX.Element => {
@@ -15,21 +16,26 @@ const Book = forwardRef(
 
     return (
       <div
-        className="mx-5 flex flex-col items-center justify-center rounded-lg py-8 transition-colors hover:bg-secondaryHover dark:hover:bg-darkSecondaryHover m400:mx-10 m400:py-5"
+        className="mx-5 flex h-[350px] flex-col items-center justify-center rounded-lg py-8 transition-colors hover:bg-secondaryHover dark:hover:bg-darkSecondaryHover m400:mx-10 m400:h-[250px] m400:py-5"
         ref={ref}
       >
         <Link
-          className="flex w-full flex-col items-center justify-center"
+          className="flex h-full w-full flex-col items-center justify-center"
           href={`book/${bookId}`}
         >
           {book.cover_id ? (
             <>
-              <div className={isLoaded ? 'block' : 'hidden'}>
+              <div
+                className={clsx(
+                  'relative aspect-[1.2/2] h-full max-w-[130px]',
+                  isLoaded ? 'block h-full' : 'hidden',
+                )}
+              >
                 <Image
-                  width={130}
-                  height={200}
                   alt={book.title}
                   quality={'50'}
+                  sizes="(max-width: 400px) 100px, 130px"
+                  fill
                   onLoadingComplete={() => {
                     setIsLoaded(true)
                   }}
@@ -38,10 +44,15 @@ const Book = forwardRef(
                 />
               </div>
 
-              <div className={isLoaded ? 'hidden' : 'block'}>
+              <div
+                className={clsx(
+                  'relative aspect-[1.3/2] max-w-[130px]',
+                  isLoaded ? 'hidden' : 'block h-full',
+                )}
+              >
                 <Image
-                  width={130}
-                  height={200}
+                  sizes="(max-width: 400px) 100px, 130px"
+                  fill
                   alt="placeholder"
                   src={placeholder.src}
                   priority
@@ -49,14 +60,14 @@ const Book = forwardRef(
               </div>
             </>
           ) : (
-            <div className="flex h-[200px] w-[130px] items-center justify-center border border-black/10 text-black dark:border-white/10 dark:text-white">
+            <div className="flex h-[225px] w-[130px] items-center justify-center border border-black/10 text-black dark:border-white/10 dark:text-white m400:h-[157px] m400:w-[94px]">
               <p>no cover</p>
             </div>
           )}
 
           <h2
             title={book.title}
-            className="mt-3 w-[90%] overflow-hidden text-ellipsis whitespace-nowrap text-center font-medium"
+            className="mt-3 w-[90%] overflow-hidden text-ellipsis whitespace-nowrap text-center font-medium m400:w-[70%] m400:text-sm"
           >
             {book.title}
           </h2>
@@ -65,7 +76,7 @@ const Book = forwardRef(
         {author && (
           <Link
             title={author.name}
-            className="mt-1.5 w-[90%] overflow-hidden text-ellipsis whitespace-nowrap text-center opacity-90 transition-none hover:underline"
+            className="mt-1.5 w-[90%] overflow-hidden text-ellipsis whitespace-nowrap text-center opacity-90 transition-none hover:underline m400:w-[70%] m400:text-sm"
             href={authorId}
           >
             {author.name}
