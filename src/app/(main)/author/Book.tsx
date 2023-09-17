@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState, forwardRef, Ref } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import placeholder from '@/../public/bookplaceholder.jpg'
 
@@ -22,29 +21,30 @@ const Book = forwardRef(
         >
           {book?.covers?.at(0) ? (
             <>
-              <div className={isLoaded ? 'block' : 'hidden'}>
-                <Image
+              <div
+                className={
+                  isLoaded ? 'flex items-center justify-center' : 'hidden'
+                }
+              >
+                <img // eslint-disable-line
                   width={130}
                   height={200}
                   alt={book.title}
-                  quality={'50'}
-                  onLoadingComplete={() => {
+                  onLoad={() => {
                     setIsLoaded(true)
                   }}
                   src={`https://covers.openlibrary.org/b/id/${book?.covers?.at(
                     0,
                   )}-M.jpg`}
-                  priority
                 />
               </div>
 
               <div className={isLoaded ? 'hidden' : 'block'}>
-                <Image
+                <img // eslint-disable-line
                   width={130}
                   height={200}
                   alt="placeholder"
                   src={placeholder.src}
-                  priority
                 />
               </div>
             </>

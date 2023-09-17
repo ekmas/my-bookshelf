@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 
 export default function SearchResult({ book }: { book: any }) {
@@ -14,7 +13,7 @@ export default function SearchResult({ book }: { book: any }) {
       <div className="flex h-[50px] w-[80%] items-center text-sm">
         <div className="min-h-[50px] min-w-[33px] m400:hidden">
           {book.cover_i ? (
-            <Image
+            <img // eslint-disable-line
               alt=""
               width={33}
               height={50}

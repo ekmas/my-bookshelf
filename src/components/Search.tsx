@@ -2,7 +2,6 @@
 
 import useDebounce from '@/hooks/useDebounce'
 import clsx from 'clsx'
-import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 import loadinggif from '@/../public/loadinggif.gif'
@@ -71,7 +70,7 @@ export default function Search() {
             <div className="flex justify-center">
               <>
                 {loading ? (
-                  <Image
+                  <img // eslint-disable-line
                     alt="loading"
                     width={40}
                     height={40}

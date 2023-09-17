@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Book({
@@ -20,7 +19,7 @@ export default function Book({
 
       <div className="flex w-[150px] items-center justify-center m400:hidden">
         {book?.cover_id ? (
-          <Image
+          <img // eslint-disable-line
             alt="book cover"
             width={33}
             height={50}

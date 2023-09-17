@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import Button from '@/components/Button'
 import loadinggif from '@/../public/loadinggif.gif'
-import Image from 'next/image'
 
 type Props = {
   username: string
@@ -64,7 +63,7 @@ export default function Success({ username, subjects }: Props) {
         <>
           {loading ? (
             <div className="flex items-center justify-center">
-              <Image
+              <img // eslint-disable-line
                 alt="loading"
                 width={60}
                 height={60}
