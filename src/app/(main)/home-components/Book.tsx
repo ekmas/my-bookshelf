@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState, forwardRef, Ref } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import placeholder from '@/../public/bookplaceholder.jpg'
 import clsx from 'clsx'
@@ -27,20 +26,17 @@ const Book = forwardRef(
             <>
               <div
                 className={clsx(
-                  'relative aspect-[1.2/2] h-full max-w-[130px]',
+                  'relative flex aspect-[1.2/2] h-full max-w-[130px] items-center justify-center',
                   isLoaded ? 'block h-full' : 'hidden',
                 )}
               >
-                <Image
+                <img // eslint-disable-line
                   alt={book.title}
-                  quality={'50'}
                   sizes="(max-width: 400px) 100px, 130px"
-                  fill
-                  onLoadingComplete={() => {
+                  onLoad={() => {
                     setIsLoaded(true)
                   }}
                   src={`https://covers.openlibrary.org/b/id/${book.cover_id}-M.jpg`}
-                  priority
                 />
               </div>
 
@@ -50,12 +46,10 @@ const Book = forwardRef(
                   isLoaded ? 'hidden' : 'block h-full',
                 )}
               >
-                <Image
+                <img // eslint-disable-line
                   sizes="(max-width: 400px) 100px, 130px"
-                  fill
                   alt="placeholder"
                   src={placeholder.src}
-                  priority
                 />
               </div>
             </>

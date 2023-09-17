@@ -3,7 +3,6 @@
 import clsx from 'clsx'
 import { useEffect, useState } from 'react'
 import loadinggif from '@/../public/loadinggif.gif'
-import Image from 'next/image'
 import useDebounce from '@/hooks/useDebounce'
 import Book from './Book'
 import { AiOutlinePlus, AiOutlineSearch } from 'react-icons/ai'
@@ -94,7 +93,7 @@ export default function EditBooks({ books, setBooks }: Props) {
             <div className="flex justify-center">
               <>
                 {loading ? (
-                  <Image
+                  <img // eslint-disable-line
                     alt="loading"
                     width={40}
                     height={40}

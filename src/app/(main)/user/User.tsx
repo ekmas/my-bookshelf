@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import defaultpfp from '@/../public/defaultprofilepicture.png'
 import Button from '@/components/Button'
 
@@ -15,7 +14,7 @@ export default function User({
 }: Props) {
   return (
     <div className="flex flex-col items-center">
-      <Image
+      <img // eslint-disable-line
         className="rounded-full border-2 border-black/30 dark:border-white/30"
         width={100}
         height={100}

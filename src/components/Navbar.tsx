@@ -4,7 +4,6 @@ import { useState } from 'react'
 import logo from '../../public/logo.png'
 import Button from './Button'
 import { User } from '@supabase/supabase-js'
-import Image from 'next/image'
 import defaultpfp from '../../public/defaultprofilepicture.png'
 import ProfileDropdown from './ProfileDropdown'
 import { AiOutlinePlus } from 'react-icons/ai'
@@ -28,15 +27,14 @@ export default function Navbar({ user, isFirstLogin, userData }: Props) {
       <div className="mx-auto flex w-full max-w-container items-center justify-between px-containerDesktop py-5 m400:px-containerMobile">
         <div className="flex w-[280px] items-center m700:mr-5 m700:max-w-[65px] m700:flex-shrink-0">
           <Button
-            className="relative aspect-[1.32/1] w-full max-w-[65px] m500:max-w-[55px]"
+            className="w-full max-w-[65px] m500:max-w-[55px]"
             variant={'link'}
             href={'/'}
           >
-            <Image
-              src={logo}
+            <img // eslint-disable-line
+              src={logo.src}
               alt="logo"
-              fill
-              sizes="(max-width: 500px) 55px, 65px"
+              className="w-[65px] m500:w-[55px]"
             />
           </Button>
         </div>
@@ -65,7 +63,7 @@ export default function Navbar({ user, isFirstLogin, userData }: Props) {
                   disabled={isFirstLogin === true}
                   className="max-w-12 h-12 max-h-12 w-12 rounded-full"
                 >
-                  <Image
+                  <img // eslint-disable-line
                     className="rounded-full border-2 border-black/30 dark:border-white/30"
                     width={48}
                     height={48}

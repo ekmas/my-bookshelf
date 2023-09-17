@@ -2,7 +2,6 @@
 
 import Button from '@/components/Button'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
-import Image from 'next/image'
 import { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import loadinggif from '@/../public/loadinggif.gif'
@@ -40,7 +39,12 @@ export default function ModalMain() {
       {error || loading ? (
         <>
           {loading ? (
-            <Image alt="loading" width={60} height={60} src={loadinggif.src} />
+            <img // eslint-disable-line
+              alt="loading"
+              width={60}
+              height={60}
+              src={loadinggif.src}
+            />
           ) : (
             <>
               <h2 className="text-center text-xl font-bold">
@@ -78,7 +82,7 @@ export default function ModalMain() {
               <div className="flex flex-col items-center justify-center">
                 <input
                   type="text"
-                  className="my-8 w-[30ch] m450:w-[25ch] m450:text-sm m350:w-[20ch] rounded-lg bg-secondary p-2.5 text-center focus:outline-none dark:bg-darkSecondary"
+                  className="my-8 w-[30ch] rounded-lg bg-secondary p-2.5 text-center focus:outline-none dark:bg-darkSecondary m450:w-[25ch] m450:text-sm m350:w-[20ch]"
                   autoComplete="off"
                   {...register('email', {
                     required: 'This field is required',

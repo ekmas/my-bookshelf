@@ -1,7 +1,5 @@
 'use client'
 
-import Image from 'next/image'
-
 export default function Book({
   book,
   children,
@@ -12,9 +10,9 @@ export default function Book({
   return (
     <div className="mb-[5px] flex items-center justify-between rounded-lg p-[10px] transition-colors hover:bg-whiteHover dark:hover:bg-blackHover">
       <div className="flex h-[50px] w-[90%] items-center text-sm">
-        <div className="min-h-[50px] min-w-[33px] m400:hidden">
+        <div className="flex min-h-[50px] min-w-[33px] items-center justify-center m400:hidden">
           {book.cover_id ? (
-            <Image
+            <img // eslint-disable-line
               alt=""
               width={33}
               height={50}

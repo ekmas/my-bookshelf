@@ -17,8 +17,8 @@ export default async function Author({
     typeof searchParams.page === 'string' ? Number(searchParams.page) : 1
 
   const res = await fetch(
-    `https://openlibrary.org/authors/${params.id}/works.json?limit=24&offset=${
-      (page - 1) * 24
+    `https://openlibrary.org/authors/${params.id}/works.json?limit=12&offset=${
+      (page - 1) * 12
     }`,
     {
       method: 'GET',
@@ -50,9 +50,9 @@ export default async function Author({
           </p>
         )}
 
-        {authorBooks.size > 24 * (page - 1) && authorBooks.size > 24 && (
+        {authorBooks.size > 12 * (page - 1) && authorBooks.size > 12 && (
           <Pagination
-            numberOfPages={Math.ceil(authorBooks.size / 24)}
+            numberOfPages={Math.ceil(authorBooks.size / 12)}
             currentPage={page}
             route={`author/${params.id}`}
           />

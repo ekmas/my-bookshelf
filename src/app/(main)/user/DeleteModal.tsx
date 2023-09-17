@@ -2,7 +2,6 @@
 
 import Button from '@/components/Button'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
-import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import loadinggif from '@/../public/loadinggif.gif'
@@ -39,7 +38,12 @@ export default function DeleteModal({ id }: { id: any }) {
       {loading || error ? (
         <>
           {loading ? (
-            <Image alt="loading" width={60} height={60} src={loadinggif.src} />
+            <img // eslint-disable-line
+              alt="loading"
+              width={60}
+              height={60}
+              src={loadinggif.src}
+            />
           ) : (
             <>
               <h2 className="text-center text-xl font-bold">

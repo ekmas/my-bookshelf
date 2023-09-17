@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
 import defaultprofilepicture from '@/../public/defaultprofilepicture.png'
 import Link from 'next/link'
 import Button from '@/components/Button'
@@ -35,23 +34,13 @@ export default function BookshelfInfo({
         className="my-6 flex max-w-min items-center rounded-lg p-[10px] transition-colors hover:bg-secondaryHover dark:hover:bg-darkSecondaryHover"
       >
         <div className="mr-4 min-h-[35px] min-w-[35px] rounded-full border border-black/30 dark:border-white/30">
-          {user.profilePicture ? (
-            <Image
-              width={35}
-              height={35}
-              src={user.profilePicture}
-              alt="profile picture"
-              className="rounded-full"
-            />
-          ) : (
-            <Image
-              width={35}
-              height={35}
-              src={defaultprofilepicture.src}
-              alt="profile picture"
-              className="rounded-full"
-            />
-          )}
+          <img // eslint-disable-line
+            width={35}
+            height={35}
+            src={user.profilePicture || defaultprofilepicture.src}
+            alt="profile picture"
+            className="rounded-full"
+          />
         </div>
 
         <h4 className="w-[90%] overflow-hidden text-ellipsis whitespace-nowrap font-medium m400:text-sm">

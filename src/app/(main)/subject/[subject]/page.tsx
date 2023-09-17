@@ -17,8 +17,8 @@ export default async function Subject({
     typeof searchParams.page === 'string' ? Number(searchParams.page) : 1
 
   const res = await fetch(
-    `https://openlibrary.org/subjects/${params.subject}.json?limit=24&offset=${
-      (page - 1) * 24
+    `https://openlibrary.org/subjects/${params.subject}.json?limit=12&offset=${
+      (page - 1) * 12
     }`,
     {
       method: 'GET',
@@ -47,9 +47,9 @@ export default async function Subject({
         </p>
       )}
 
-      {books.work_count > 24 * (page - 1) && books.work_count > 24 && (
+      {books.work_count > 12 * (page - 1) && books.work_count > 12 && (
         <Pagination
-          numberOfPages={Math.ceil(books.work_count / 24)}
+          numberOfPages={Math.ceil(books.work_count / 12)}
           currentPage={page}
           route={`subject/${params.subject}`}
         />

@@ -2,7 +2,6 @@ import Button from '@/components/Button'
 import { useState, useEffect } from 'react'
 import Bookshelves from './Bookshelves'
 import clsx from 'clsx'
-import Image from 'next/image'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import { useParams } from 'next/navigation'
 import loadinggif from '@/../public/loadinggif.gif'
@@ -118,7 +117,12 @@ export default function ModalMain({ bookInfo }: { bookInfo: any }) {
               )}
             </>
           ) : (
-            <Image width={70} height={70} src={loadinggif.src} alt="loading" />
+            <img // eslint-disable-line
+              width={70}
+              height={70}
+              src={loadinggif.src}
+              alt="loading"
+            />
           )}
         </>
       ) : (

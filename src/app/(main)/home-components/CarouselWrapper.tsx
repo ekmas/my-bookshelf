@@ -9,7 +9,7 @@ export default async function CarouselWrapper({
   isRecommended?: boolean
 }) {
   const res = await fetch(
-    `https://openlibrary.org/subjects/${subject}.json?limit=10&offset=${
+    `https://openlibrary.org/subjects/${subject}.json?limit=6&offset=${
       getRandomNumber(10) * 10
     }`,
     {
