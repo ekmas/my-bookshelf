@@ -19,12 +19,14 @@ export default function Book({
 
       <div className="flex w-[150px] items-center justify-center m400:hidden">
         {book?.cover_id ? (
-          <img // eslint-disable-line
-            alt="book cover"
-            width={33}
-            height={50}
-            src={`https://covers.openlibrary.org/b/id/${book.cover_id}-S.jpg`}
-          />
+          <div className="flex h-[50px] w-[33px] shrink-0 flex-grow-0 items-center justify-center">
+            <img // eslint-disable-line
+              alt="book cover"
+              width={33}
+              height={50}
+              src={`https://covers.openlibrary.org/b/id/${book.cover_id}-S.jpg`}
+            />
+          </div>
         ) : (
           <div className="flex h-[50px] w-[33px] shrink-0 flex-grow-0 items-center justify-center border border-black/10 dark:border-white/10">
             /
