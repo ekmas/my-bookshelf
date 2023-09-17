@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     template: 'My bookshelf - %s',
   },
   description: 'My bookshelf is an app for discovering new books',
+  other: {
+    ['google-site-verification']: 'E5Nk_padNNLDRqBFmy66pZZYKOXIS8NfbhjLoHZG_kI',
+  },
 }
 
 export default function RootLayout({
