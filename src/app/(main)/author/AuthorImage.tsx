@@ -9,12 +9,7 @@ export default function AuthorImage({ imageId }: { imageId: number }) {
 
   return (
     <>
-      <div
-        className={clsx(
-          'relative aspect-square h-full max-w-[260px]',
-          isLoaded ? 'block h-full' : 'hidden',
-        )}
-      >
+      <div className={clsx('max-w-[260px]', isLoaded ? 'block' : 'hidden')}>
         <img // eslint-disable-line
           alt={'Author'}
           sizes="(max-width: 1000px) 200px, (max-width: 500px) 150px, 260px"

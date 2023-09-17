@@ -24,7 +24,7 @@ export default async function AuthorPageLayout({
   return (
     <div className="mx-auto h-full w-full max-w-container px-containerDesktop py-10 m400:px-containerMobile">
       <div className="grid h-min w-full grid-cols-[1fr_2fr] gap-10 m700:gap-5 m650:grid-cols-1">
-        <div className="flex h-[250px] justify-center rounded-lg border border-black/10 py-5 dark:border-white/10">
+        <div className="flex h-[250px] items-center justify-center rounded-lg border border-black/10 py-5 dark:border-white/10">
           {data?.photos?.at(0) ? (
             <AuthorImage imageId={data?.photos?.at(0)} />
           ) : (
