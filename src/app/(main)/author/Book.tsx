@@ -1,11 +1,19 @@
 'use client'
 
-import React, { useState, forwardRef, Ref } from 'react'
+import React, { useState, forwardRef, Ref, useEffect } from 'react'
 import Link from 'next/link'
 import placeholder from '@/../public/bookplaceholder.jpg'
+import { useSearchParams } from 'next/navigation'
 
 const Book = forwardRef(
   ({ book }: any, ref: Ref<HTMLDivElement>): JSX.Element => {
+    const searchParams = useSearchParams()
+    const currentPage = searchParams.get('page')
+
+    useEffect(() => {
+      setIsLoaded(false)
+    }, [currentPage])
+
     const [isLoaded, setIsLoaded] = useState(false)
 
     const bookId = book?.key.split('/')?.at(2)
