@@ -2,7 +2,7 @@
 
 # My-bookshelf
 
-Built with NextJS, Supabase, and Taiwlind.
+Built with NextJS, Supabase, and Tailwind.
 
 ## Features
 
